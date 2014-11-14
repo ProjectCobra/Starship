@@ -6,32 +6,29 @@ using System.Web.Mvc;
 
 namespace CALVRI.Controllers
 {
-    public class HomeController : Controller
+    public class TWardenController : Controller
     {
+        // GET: TWarden
         public ActionResult Index()
         {
             return View();
         }
 
-        public ActionResult About()
+        // POST: Issue Challan
+        public ActionResult IssueChallan()
         {
-            ViewBag.Message = "Your application description page.";
-
             return View();
         }
 
-        public ActionResult Contact()
+        // GET: Statistics
+        public ActionResult Statistics()
         {
-            ViewBag.Message = "Your contact page.";
-
             return View();
         }
 
-
-        public ActionResult FAQs()
+        // GET: Search
+        public ActionResult Search()
         {
-            ViewBag.Message = "Your FAQs page.";
-
             return View();
         }
     }
