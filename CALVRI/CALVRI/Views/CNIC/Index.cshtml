@@ -201,7 +201,7 @@
                                 <td>Place of Violation</td>
                                 <td>Viotation Type</td>
                                 <td>Amount Due</td>
-                                <td><p><button class="btn btn-primary btn-xs" data-title="Pay" data-toggle="modal" data-target="#pay" data-placement="top" rel="tooltip"><span class="glyphicon glyphicon-credit-card"></span></button></p></td>
+                                <td><p><button class="btn btn-danger btn-xs" data-title="Pay" data-toggle="modal" data-target="#pay" data-placement="top" rel="tooltip"><span class="glyphicon glyphicon-credit-card"></span></button></p></td>
                             </tr>
 
                             <tr>
@@ -209,6 +209,7 @@
                                 <td>Place of Violation</td>
                                 <td>Viotation Type</td>
                                 <td>Amount Due</td>
+                                <td><p><button class="btn btn-primary btn-xs disabled" data-title="Pay" data-toggle="modal" data-target="#pay" data-placement="top" rel="tooltip"><span class="glyphicon glyphicon-credit-card"></span></button></p></td>
                             </tr>
 
                             <tr>
@@ -216,6 +217,7 @@
                                 <td>Place of Violation</td>
                                 <td>Viotation Type</td>
                                 <td>Amount Due</td>
+                                <td><p><button class="btn btn-primary btn-xs disabled" data-title="Pay" data-toggle="modal" data-target="#pay" data-placement="top" rel="tooltip"><span class="glyphicon glyphicon-credit-card"></span></button></p></td>
                             </tr>
 
                             <tr>
@@ -223,6 +225,7 @@
                                 <td>Place of Violation</td>
                                 <td>Viotation Type</td>
                                 <td>Amount Due</td>
+                                <td><p><button class="btn btn-primary btn-xs disabled" data-title="Pay" data-toggle="modal" data-target="#pay" data-placement="top" rel="tooltip"><span class="glyphicon glyphicon-credit-card"></span></button></p></td>
                             </tr>
 
                             <tr>
@@ -230,53 +233,55 @@
                                 <td>Place of Violation</td>
                                 <td>Viotation Type</td>
                                 <td>Amount Due</td>
+                                <td><p><button class="btn btn-primary btn-xs disabled" data-title="Pay" data-toggle="modal" data-target="#pay" data-placement="top" rel="tooltip"><span class="glyphicon glyphicon-credit-card"></span></button></p></td>
                             </tr>
                         </tbody>
                     </table>
-                    <div class="modal fade" id="pay" tabindex="-1" role="dialog" aria-labelledby="edit" aria-hidden="true">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                                    <h4 class="modal-title custom_align" id="Heading">Pay</h4>
-                                </div>
-                                <div class="modal-body">
-                                    <div class="form-group">
-                                        <input class="form-control " type="text" placeholder="CNIC Number">
-                                    </div>
-                                    <div class="form-group">
-
-                                        <input class="form-control " type="text" placeholder="License Number">
-                                    </div>
-                                    <div class="form-group">
-                                        <textarea rows="2" class="form-control" placeholder="Violation"></textarea>
-                                    </div>
-                                    <div class="form-group">
-                                        <textarea rows="2" class="form-control" placeholder="Amount Due"></textarea>
-                                    </div>
-                                    <div class="form-group">
-                                        <textarea rows="2" class="form-control" placeholder="Credit Card number"></textarea>
-                                    </div>
-                                    <div class="form-group">
-                                        <textarea rows="2" class="form-control" placeholder="Credit Card Holder Name"></textarea>
-                                    </div>
-                                    <div class="form-group">
-                                        <textarea rows="2" class="form-control" placeholder="CVV code"></textarea>
-                                    </div>
-                                </div>
-                                <div class="modal-footer ">
-                                    <button type="button" class="btn btn-warning btn-lg" style="width: 100%;"><span class="glyphicon glyphicon-ok-sign"></span> Pay</button>
-                                </div>
-                            </div>
-                            <!-- /.modal-content -->
-                        </div>
-                        <!-- /.modal-dialog -->
-                    </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
+    <div class="modal fade" id="pay" tabindex="-1" role="dialog" aria-labelledby="pay" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h4 class="modal-title custom_align" id="Heading">Pay</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <input class="form-control " type="text" placeholder="CNIC Number">
+                    </div>
+                    <div class="form-group">
+
+                        <input class="form-control " type="text" placeholder="License Number">
+                    </div>
+                    <div class="form-group">
+                        <textarea rows="2" class="form-control" placeholder="Violation"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <textarea rows="2" class="form-control" placeholder="Amount Due"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <textarea rows="2" class="form-control" placeholder="Credit Card number"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <textarea rows="2" class="form-control" placeholder="Credit Card Holder Name"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <textarea rows="2" class="form-control" placeholder="CVV code"></textarea>
+                    </div>
+                </div>
+                <div class="modal-footer ">
+                    <button type="button" class="btn btn-warning btn-lg" style="width: 100%;"><span class="glyphicon glyphicon-ok-sign"></span> Pay</button>
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+
 
 <script>
 
@@ -309,22 +314,6 @@
         });
     });
 
-<<<<<<< HEAD
-<h2>CNIC Holder</h2>
-
-<div class="col-md-6" style="width:700px; margin-left:auto; margin-right:auto;">
-    
-    <span class="col-md-4"><img src="../img/agnes.jpg" style="max-height:200px;max-width:200px;margin-top:10px;"></span>
-    <span class="col-md-7" style="margin-left:15px;">
-        <h3>Name: <span>Blah Blah Blah</span></h3>
-        <h3>CNIC: <span>Blah Blah Blah</span></h3>
-        <h3>Driving License: <span>Blah Blah Blah</span></h3>
-        <h3>Age: <span>Blah Blah Blah</span></h3>
-        <h3>DOB: <span>Blah Blah Blah</span></h3>
-    </span>
-
-</div>
-=======
     $(document).ready(function () {
         $("[rel='tooltip']").tooltip();
 
@@ -337,5 +326,6 @@
             }
         );
     });
+
+
 </script>
->>>>>>> origin/master
