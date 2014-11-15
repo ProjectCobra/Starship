@@ -4,11 +4,11 @@
 
 /* -- color classes -- */
 .coralbg {
-    background-color: #FA396F;
+    background-color: #F75D59;
 } 
 
 .coral {
-    color: #FA396f;
+    color: #F75D59;
 }
 
 .turqbg {
@@ -27,7 +27,7 @@
 div.user-menu-container {
   z-index: 10;
   background-color: #fff;
-  margin-top: 20px;
+  margin-top: 0px;
   background-clip: padding-box;
   opacity: 0.97;
   filter: alpha(opacity=97);
@@ -70,12 +70,12 @@ div.user-menu-container .btn-group-vertical>a {
 }
 
 div.btn-group-vertical>a:hover {
-    color: #FA396f;
+    color: #4682B4;
     border-color: white;
 }
 
 div.btn-group-vertical>a.active {
-    background: #FA396F;
+    background: #4682B4;
     box-shadow: none;
     color: white;
 }
@@ -140,7 +140,8 @@ div.user-menu div.user-menu-content:not(.active){
 }
 
 .user-image {
-  max-height:200px;
+  max-height:525 px;
+  max-width:375px;
   overflow:hidden;
 }
 
@@ -222,6 +223,6 @@ div.user-menu div.user-menu-content:not(.active){
 /* -- media query for user profile image -- */
 @media (max-width: 767px) {
     .user-image {
-        max-height: 400px;
+        max-height: 525px;
     }
 }

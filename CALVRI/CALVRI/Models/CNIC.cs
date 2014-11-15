@@ -13,7 +13,7 @@ namespace CALVRI.Models
         public string Name { get; set; }
 
         [Required]
-        [Display(Name = "CNIC")]
+        [Display(Name = "CNICNumber")]
         public int CNICNo { get; set; }
 
         [Required]
