@@ -13,7 +13,7 @@ namespace CALVRI.Models
         public string Name { get; set; }
 
         [Required]
-<<<<<<< HEAD
+
 
         [Display(Name = "CNIC")]
         public int CNICnum { get; set; }
@@ -21,12 +21,12 @@ namespace CALVRI.Models
         [Display(Name = "CNICNumber")]
         public int CNICNo { get; set; }
 
-=======
-        [Display(Name = "CNIC")]
-        public int CNICnum { get; set; }
-        [Display(Name = "CNICNumber")]
-        public int CNICNo { get; set; }
->>>>>>> origin/master
+
+        //[Display(Name = "CNIC")]
+        //public int CNICnum { get; set; }
+        //[Display(Name = "CNICNumber")]
+        //public int CNICNo { get; set; }
+
 
         [Required]
         [Display(Name = "Date of Birth")]

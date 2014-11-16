@@ -6,7 +6,7 @@ namespace CALVRI.Models
     {
         [Required]
         [EmailAddress]
-        [Display(Name = "Username")]
+        [Display(Name = "Email")]
         public string Username { get; set; }
     }
 
@@ -55,7 +55,7 @@ namespace CALVRI.Models
     {
         [Required]
         [EmailAddress]
-        [Display(Name = "Username")]
+        [Display(Name = "Email")]
         public string Username { get; set; }
 
         [Required]
@@ -74,7 +74,7 @@ namespace CALVRI.Models
     {
         [Required]
         [EmailAddress]
-        [Display(Name = "Username")]
+        [Display(Name = "Email")]
         public string Username { get; set; }
 
         [Required]
@@ -95,7 +95,7 @@ namespace CALVRI.Models
     {
         [Required]
         [EmailAddress]
-        [Display(Name = "Username")]
+        [Display(Name = "Email")]
         public string Username { get; set; }
     }
 }
