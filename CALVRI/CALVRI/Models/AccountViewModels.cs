@@ -7,7 +7,7 @@ namespace CALVRI.Models
         [Required]
         [EmailAddress]
         [Display(Name = "Email")]
-        public string Username { get; set; }
+        public string Email { get; set; }
     }
 
     public class ExternalLoginListViewModel
@@ -56,7 +56,7 @@ namespace CALVRI.Models
         [Required]
         [EmailAddress]
         [Display(Name = "Email")]
-        public string Username { get; set; }
+        public string Email { get; set; }
 
         [Required]
         [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
@@ -75,7 +75,7 @@ namespace CALVRI.Models
         [Required]
         [EmailAddress]
         [Display(Name = "Email")]
-        public string Username { get; set; }
+        public string Email { get; set; }
 
         [Required]
         [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
@@ -96,6 +96,6 @@ namespace CALVRI.Models
         [Required]
         [EmailAddress]
         [Display(Name = "Email")]
-        public string Username { get; set; }
+        public string Email { get; set; }
     }
 }
