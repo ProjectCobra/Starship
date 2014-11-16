@@ -12,27 +12,5 @@ namespace CALVRI.Controllers
         {
             return View();
         }
-
-        public ActionResult About()
-        {
-            ViewBag.Message = "Your application description page.";
-
-            return View();
-        }
-
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
-        }
-
-
-        public ActionResult FAQs()
-        {
-            ViewBag.Message = "Your FAQs page.";
-
-            return View();
-        }
     }
 }
