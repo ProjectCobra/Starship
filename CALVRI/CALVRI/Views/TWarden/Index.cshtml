@@ -30,18 +30,18 @@
                 </div>
                 <div class="row overview">
                     <div class="col-md-4 user-pad text-center">
-                        <button type="button" class="btn btn-labeled btn-info" id="search" onclick=selectHandler(this)>
+                        <button type="button" class="btn btn-labeled btn-info" id="search">
                             <span class="btn-label"><i class="glyphicon glyphicon-search"></i></span>Search Profile
                         </button>
                         @*<h4>2,784</h4>*@
                     </div>
                     <div class="col-md-4 user-pad text-center">
                         <button class="btn btn-labeled btn-info">
-                            <span class="btn-label"><i class="glyphicon glyphicon-certificate"></i></span>95 Challans Issued
+                            <span class="btn-label"><i class="glyphicon glyphicon-certificate"></i></span>6 Challans Issued
                         </button>
                     </div>
                     <div class="col-md-4 user-pad text-center">
-                        <button type="button" class="btn btn-labeled btn-info">
+                        <button type="button" class="btn btn-labeled btn-info" data-toggle="modal" data-target="#report" data-placement="top">
                             <span class="btn-label"><i class="glyphicon glyphicon-file"></i></span>Report
                         </button>
                     </div>
@@ -93,6 +93,36 @@
         </div>
     </div>
 </section>
+
+<div class="modal fade" id="report" tabindex="-1" role="dialog" aria-labelledby="report" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4 class="modal-title custom_align" id="Heading">Report</h4>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <input class="form-control " type="text" placeholder="Incident">
+                </div>
+                <div class="form-group">
+                    <textarea rows="2" class="form-control" placeholder="Landmark"></textarea>
+                </div>
+                <div class="form-group">
+                    <textarea rows="2" class="form-control" placeholder="Time"></textarea>
+                </div>
+                <div class="form-group">
+                    <textarea rows="2" class="form-control" placeholder="Additional Information"></textarea>
+                </div>
+            </div>
+            <div class="modal-footer ">
+                <button type="button" class="btn btn-warning btn-lg" style="width: 100%;"><span class="glyphicon glyphicon-ok-sign"></span>Report</button>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
 
 <section id="about" class="home-section text-center" style="display:none">
     <div class="heading-about">
