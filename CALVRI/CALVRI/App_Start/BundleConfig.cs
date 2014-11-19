@@ -9,7 +9,7 @@ namespace CALVRI
         public static void RegisterBundles(BundleCollection bundles)
         {
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
-                        "~/Scripts/jquery-{version}.js"));
+                        "~/Scripts/jquery-{version}"));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
                         "~/Scripts/jquery.validate*"));
@@ -20,12 +20,12 @@ namespace CALVRI
                         "~/Scripts/modernizr-*"));
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
-                      "~/Scripts/bootstrap.min.js",
-                      "~/Scripts/respond.js"));
+                      "~/Scripts/bootstrap.min",
+                      "~/Scripts/respond"));
 
-            bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.min.css",
-                      "~/Content/style.css"));
+            bundles.Add(new StyleBundle("~/bundles/css").Include(
+                      "~/Content/bootstrap.min",
+                      "~/Content/style"));
 
             // Set EnableOptimizations to false for debugging. For more information,
             // visit http://go.microsoft.com/fwlink/?LinkId=301862
