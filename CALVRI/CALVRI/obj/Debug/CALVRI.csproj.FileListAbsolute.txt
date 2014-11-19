@@ -163,3 +163,4 @@ C:\Users\Nida\Documents\GitHub\Starship\CALVRI\CALVRI\bin\Microsoft.Owin.Securit
 C:\Users\Nida\Documents\GitHub\Starship\CALVRI\CALVRI\obj\Debug\CALVRI.csprojResolveAssemblyReference.cache
 C:\Users\Nida\Documents\GitHub\Starship\CALVRI\CALVRI\obj\Debug\CALVRI.dll
 C:\Users\Nida\Documents\GitHub\Starship\CALVRI\CALVRI\obj\Debug\CALVRI.pdb
+C:\Users\Sumbul\Documents\GitHub\Starship\CALVRI\CALVRI\obj\Debug\CALVRI.csprojResolveAssemblyReference.cache

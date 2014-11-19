@@ -15,7 +15,7 @@ namespace CALVRI.Models
         [Required]
 
         [Display(Name = "CNICNumber")]
-        public int CNICnum { get; set; }
+        public int CNICNo { get; set; }
 
         [Required]
         [Display(Name = "Date of Birth")]
