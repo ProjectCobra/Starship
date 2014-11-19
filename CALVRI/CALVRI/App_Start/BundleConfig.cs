@@ -23,7 +23,7 @@ namespace CALVRI
                       "~/Scripts/bootstrap.min",
                       "~/Scripts/respond"));
 
-            bundles.Add(new StyleBundle("~/bundles/css").Include(
+            bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.min",
                       "~/Content/style"));
 
