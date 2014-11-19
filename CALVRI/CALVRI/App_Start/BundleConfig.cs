@@ -20,12 +20,12 @@ namespace CALVRI
                         "~/Scripts/modernizr-*"));
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
-                      "~/Scripts/bootstrap.min",
-                      "~/Scripts/respond"));
+                      "~/Scripts/bootstrap.min.css",
+                      "~/Scripts/respond.css"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.min",
-                      "~/Content/style"));
+                      "~/Content/bootstrap.min.css",
+                      "~/Content/style.css"));
 
             // Set EnableOptimizations to false for debugging. For more information,
             // visit http://go.microsoft.com/fwlink/?LinkId=301862
