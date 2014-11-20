@@ -299,6 +299,10 @@
     <Content Include="obj\Debug\CALVRI.csproj.FileListAbsolute.txt" />
     <Content Include="obj\Debug\CALVRI.dll" />
     <Content Include="obj\Debug\CALVRI.pdb" />
+    <Content Include="obj\Release\AspnetCompileMerge\Source\bin\CALVRI.dll" />
+    <Content Include="obj\Release\AspnetCompileMerge\Source\obj\Release\AspnetCompileMerge\Source\bin\CALVRI.dll" />
+    <Content Include="obj\Release\AspnetCompileMerge\Source\obj\Release\AspnetCompileMerge\Source\obj\Release\CALVRI.dll" />
+    <Content Include="obj\Release\AspnetCompileMerge\Source\obj\Release\CALVRI.dll" />
     <Content Include="obj\Release\CALVRI.csproj.FileListAbsolute.txt" />
     <Content Include="obj\Release\CALVRI.dll" />
     <Content Include="obj\Release\CALVRI.pdb" />
@@ -353,6 +357,20 @@
     <Content Include="obj\Release\Package\PackageTmp\Scripts\respond.min.js" />
     <Content Include="obj\Release\CSAutoParameterize\transformed\Views\Web.config" />
     <Content Include="obj\Release\CSAutoParameterize\transformed\Web.config" />
+    <Content Include="obj\Debug\build.force" />
+    <Content Include="fonts\opensans-light.woff" />
+    <Content Include="fonts\opensans-semibold-600.woff" />
+    <Content Include="fonts\opensans-v6.woff" />
+    <Content Include="fonts\robotoslab_bold.ttf" />
+    <Content Include="obj\Release\CSAutoParameterize\original\obj\Release\CSAutoParameterize\original\Views\Web.config" />
+    <Content Include="obj\Release\CSAutoParameterize\original\obj\Release\CSAutoParameterize\original\Web.config" />
+    <Content Include="obj\Release\CSAutoParameterize\original\obj\Release\CSAutoParameterize\transformed\Views\Web.config" />
+    <Content Include="obj\Release\CSAutoParameterize\original\obj\Release\CSAutoParameterize\transformed\Web.config" />
+    <Content Include="obj\Release\CSAutoParameterize\original\obj\Release\Package\PackageTmp\Views\Web.config" />
+    <Content Include="obj\Release\CSAutoParameterize\original\obj\Release\Package\PackageTmp\Web.config" />
+    <Content Include="obj\Release\CSAutoParameterize\original\obj\Release\TransformWebConfig\assist\Web.config" />
+    <Content Include="obj\Release\CSAutoParameterize\original\obj\Release\TransformWebConfig\original\Web.config" />
+    <Content Include="obj\Release\CSAutoParameterize\original\obj\Release\TransformWebConfig\transformed\Web.config" />
     <None Include="obj\Release\CSAutoParameterize\transformed\Views\Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -498,7 +516,34 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="obj\Debug\ProfileTransformWebConfig\transformed\obj\Release\CSAutoParameterize\original\Views\" />
+    <Folder Include="obj\Debug\ProfileTransformWebConfig\transformed\obj\Release\CSAutoParameterize\transformed\Views\" />
+    <Folder Include="obj\Debug\ProfileTransformWebConfig\transformed\obj\Release\Package\PackageTmp\Views\" />
+    <Folder Include="obj\Debug\ProfileTransformWebConfig\transformed\obj\Release\TransformWebConfig\assist\" />
+    <Folder Include="obj\Debug\ProfileTransformWebConfig\transformed\obj\Release\TransformWebConfig\original\" />
+    <Folder Include="obj\Debug\ProfileTransformWebConfig\transformed\obj\Release\TransformWebConfig\transformed\" />
+    <Folder Include="obj\Debug\ProfileTransformWebConfig\transformed\Views\" />
     <Folder Include="obj\Debug\TempPE\" />
+    <Folder Include="obj\Debug\TransformWebConfig\transformed\obj\Release\CSAutoParameterize\original\Views\" />
+    <Folder Include="obj\Debug\TransformWebConfig\transformed\obj\Release\CSAutoParameterize\transformed\Views\" />
+    <Folder Include="obj\Debug\TransformWebConfig\transformed\obj\Release\Package\PackageTmp\Views\" />
+    <Folder Include="obj\Debug\TransformWebConfig\transformed\obj\Release\TransformWebConfig\assist\" />
+    <Folder Include="obj\Debug\TransformWebConfig\transformed\obj\Release\TransformWebConfig\original\" />
+    <Folder Include="obj\Debug\TransformWebConfig\transformed\obj\Release\TransformWebConfig\transformed\" />
+    <Folder Include="obj\Debug\TransformWebConfig\transformed\Views\" />
+    <Folder Include="obj\Release\CSAutoParameterize\transformed\obj\Release\CSAutoParameterize\original\Views\" />
+    <Folder Include="obj\Release\CSAutoParameterize\transformed\obj\Release\CSAutoParameterize\transformed\Views\" />
+    <Folder Include="obj\Release\CSAutoParameterize\transformed\obj\Release\Package\PackageTmp\Views\" />
+    <Folder Include="obj\Release\CSAutoParameterize\transformed\obj\Release\TransformWebConfig\assist\" />
+    <Folder Include="obj\Release\CSAutoParameterize\transformed\obj\Release\TransformWebConfig\original\" />
+    <Folder Include="obj\Release\CSAutoParameterize\transformed\obj\Release\TransformWebConfig\transformed\" />
+    <Folder Include="obj\Release\Database\" />
+    <Folder Include="obj\Release\ProfileTransformWebConfig\transformed\obj\Release\CSAutoParameterize\original\Views\" />
+    <Folder Include="obj\Release\ProfileTransformWebConfig\transformed\obj\Release\CSAutoParameterize\transformed\Views\" />
+    <Folder Include="obj\Release\ProfileTransformWebConfig\transformed\obj\Release\Package\PackageTmp\Views\" />
+    <Folder Include="obj\Release\ProfileTransformWebConfig\transformed\obj\Release\TransformWebConfig\assist\" />
+    <Folder Include="obj\Release\ProfileTransformWebConfig\transformed\obj\Release\TransformWebConfig\original\" />
+    <Folder Include="obj\Release\ProfileTransformWebConfig\transformed\obj\Release\TransformWebConfig\transformed\" />
     <Folder Include="obj\Release\ProfileTransformWebConfig\transformed\Views\" />
     <Folder Include="obj\Release\TempPE\" />
     <Folder Include="obj\Release\TransformWebConfig\transformed\Views\" />
