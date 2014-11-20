@@ -29,6 +29,9 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <ExcludeGeneratedDebugSymbol>true</ExcludeGeneratedDebugSymbol>
+    <PublishDatabases>false</PublishDatabases>
+    <FilesToIncludeForPublish>AllFilesInTheProject</FilesToIncludeForPublish>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -371,6 +374,15 @@
     <Content Include="obj\Release\CSAutoParameterize\original\obj\Release\TransformWebConfig\assist\Web.config" />
     <Content Include="obj\Release\CSAutoParameterize\original\obj\Release\TransformWebConfig\original\Web.config" />
     <Content Include="obj\Release\CSAutoParameterize\original\obj\Release\TransformWebConfig\transformed\Web.config" />
+    <Content Include="obj\Release\CSAutoParameterize\original\obj\Release\CSAutoParameterize\original\obj\Release\CSAutoParameterize\original\Views\Web.config" />
+    <Content Include="obj\Release\CSAutoParameterize\original\obj\Release\CSAutoParameterize\original\obj\Release\CSAutoParameterize\original\Web.config" />
+    <Content Include="obj\Release\CSAutoParameterize\original\obj\Release\CSAutoParameterize\original\obj\Release\CSAutoParameterize\transformed\Views\Web.config" />
+    <Content Include="obj\Release\CSAutoParameterize\original\obj\Release\CSAutoParameterize\original\obj\Release\CSAutoParameterize\transformed\Web.config" />
+    <Content Include="obj\Release\CSAutoParameterize\original\obj\Release\CSAutoParameterize\original\obj\Release\Package\PackageTmp\Views\Web.config" />
+    <Content Include="obj\Release\CSAutoParameterize\original\obj\Release\CSAutoParameterize\original\obj\Release\Package\PackageTmp\Web.config" />
+    <Content Include="obj\Release\CSAutoParameterize\original\obj\Release\CSAutoParameterize\original\obj\Release\TransformWebConfig\assist\Web.config" />
+    <Content Include="obj\Release\CSAutoParameterize\original\obj\Release\CSAutoParameterize\original\obj\Release\TransformWebConfig\original\Web.config" />
+    <Content Include="obj\Release\CSAutoParameterize\original\obj\Release\CSAutoParameterize\original\obj\Release\TransformWebConfig\transformed\Web.config" />
     <None Include="obj\Release\CSAutoParameterize\transformed\Views\Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -379,6 +391,7 @@
     </None>
     <None Include="obj\Release\Package\PackageTmp\Scripts\_references.js" />
     <Content Include="obj\Release\_WPPLastBuildInfo.txt" />
+    <Content Include="Properties\PublishProfiles\calvri.pubxml.user" />
     <Content Include="Scripts\angular-mocks.js" />
     <Content Include="Scripts\angular.js" />
     <Content Include="Scripts\angular.min.js" />
