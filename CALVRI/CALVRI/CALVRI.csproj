@@ -353,6 +353,12 @@
     <Content Include="obj\Release\Package\PackageTmp\Scripts\respond.min.js" />
     <Content Include="obj\Release\CSAutoParameterize\transformed\Views\Web.config" />
     <Content Include="obj\Release\CSAutoParameterize\transformed\Web.config" />
+    <None Include="obj\Release\CSAutoParameterize\transformed\Views\Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="obj\Release\CSAutoParameterize\transformed\Views\Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
     <None Include="obj\Release\Package\PackageTmp\Scripts\_references.js" />
     <Content Include="obj\Release\_WPPLastBuildInfo.txt" />
     <Content Include="Scripts\angular-mocks.js" />
