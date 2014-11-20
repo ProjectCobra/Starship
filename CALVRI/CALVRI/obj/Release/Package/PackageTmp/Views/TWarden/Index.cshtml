@@ -1,0 +1,212 @@
+﻿@using CALVRI.Models
+@model CNIC
+
+@{
+    ViewBag.Title = "IndexW";
+}
+<link rel="stylesheet" type="text/css" href="~/Content/IndexW.css">
+<link href="http://fontawesome.io/assets/font-awesome/css/font-awesome.css" rel="stylesheet" media="screen">
+<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="http://code.jquery.com/ui/1.11.0/jquery-ui.min.js"></script>
+
+<section id="intro" class="intro home-section text-center" style="padding-top: 200px">
+    <div class="container">
+        <div class="row user-menu-container square">
+            <div class="col-md-7 user-details">
+                <div class="row bg-primary white">
+                    <div class="col-md-6 no-pad">
+                        <div class="user-pad">
+                            <h3>Traffic Warden Name</h3>
+                            <h4 class="white"><i class="glyphicon glyphicon-user"></i> Username</h4>
+                            <h4 class="white"><i class="glyphicon glyphicon-credit-card"></i> CNIC Number</h4>
+                            <h4 class="white"><i class="glyphicon glyphicon-picture"></i> Place of Duty</h4>
+                        </div>
+                    </div>
+                    <div class="col-md-6 no-pad">
+                        <div class="user-image">
+                            <img src="~/img/team/4.jpg" class="img-responsive thumbnail">
+                        </div>
+                    </div>
+                </div>
+                <div class="row overview">
+                    <div class="col-md-4 user-pad text-center">
+                        <button type="button" class="btn btn-labeled btn-info" id="search">
+                            <span class="btn-label"><i class="glyphicon glyphicon-search"></i></span>Search Profile
+                        </button>
+                        @*<h4>2,784</h4>*@
+                    </div>
+                    <div class="col-md-4 user-pad text-center">
+                        <button class="btn btn-labeled btn-info">
+                            <span class="btn-label"><i class="glyphicon glyphicon-certificate"></i></span>6 Challans Issued
+                        </button>
+                    </div>
+                    <div class="col-md-4 user-pad text-center">
+                        <button type="button" class="btn btn-labeled btn-info" data-toggle="modal" data-target="#report" data-placement="top">
+                            <span class="btn-label"><i class="glyphicon glyphicon-file"></i></span>Report
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-1 user-menu-btns">
+                <div class="btn-group-vertical square" id="responsive">
+                    <a href="#" class="btn btn-block btn-default active">
+                        <i class="glyphicon glyphicon-bell"></i>
+                    </a>
+                    <a href="#" class="btn btn-default">
+                        <i class="glyphicon glyphicon-bell"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-4 user-menu user-pad">
+                <div class="user-menu-content active">
+                    <h3>
+                        Live Alerts
+                    </h3>
+                    <ul class="user-menu-list">
+                        <li>
+                            <h4><i class="glyphicon glyphicon-chevron-right coral"></i> 02 45pm : <small><strong>Traffic Jam at Aabpara Intersection</strong></small></h4>
+                        </li>
+                        <li>
+                            <h4><i class="glyphicon glyphicon-chevron-right coral"></i> 01 00pm : <small><strong>Traffic Lights down at Zero Point Intersection</strong></small></h4>
+                        </li>
+                        <li>
+                            <button type="button" class="btn btn-labeled btn-info" href="#">
+                                <span class="btn-label"><i class="glyphicon glyphicon-bell"></i></span>View all activity today
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+                <div class="user-menu-content">
+                    <h3>
+                        Statistics
+                    </h3>
+                    <ul class="user-menu-list">
+                        <li>
+                            <h4><i class="glyphicon glyphicon-chevron-right coral"></i> Total Challans issued: <small class="coral"><strong>95</strong></small></h4>
+                        </li>
+                        <li>
+                            <h4><i class="glyphicon glyphicon-chevron-right coral"></i> Highest Challan issue area: <small class="coral"><strong>Kashmir Highway</strong></small></h4>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="modal fade" id="report" tabindex="-1" role="dialog" aria-labelledby="report" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4 class="modal-title custom_align" id="Heading">Report</h4>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <input class="form-control " type="text" placeholder="Incident">
+                </div>
+                <div class="form-group">
+                    <textarea rows="2" class="form-control" placeholder="Landmark"></textarea>
+                </div>
+                <div class="form-group">
+                    <textarea rows="2" class="form-control" placeholder="Time"></textarea>
+                </div>
+                <div class="form-group">
+                    <textarea rows="2" class="form-control" placeholder="Additional Information"></textarea>
+                </div>
+            </div>
+            <div class="modal-footer ">
+                <button type="button" class="btn btn-warning btn-lg" style="width: 100%;"><span class="glyphicon glyphicon-ok-sign"></span>Report</button>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+
+<section id="about" class="home-section text-center" style="display:none">
+    <div class="heading-about">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <div class="wow bounceInDown" data-wow-delay="0.4s">
+                        <div class="section-heading">
+                            <h2>SEARCH PROFILE</h2>
+                            <i class="fa fa-2x fa-angle-down"></i>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container" id="loginForm">
+        <div class="row">
+            <div class="col-lg-2 col-lg-offset-5">
+                <hr class="marginbot-50">
+            </div>
+        </div>
+        <div class="row">
+            @using (Html.BeginForm("Search", "TWarden", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+            {
+                @Html.AntiForgeryToken()
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="form-group">
+                    @Html.LabelFor(m => m.CNICNo, new { @class = "col-md-3 control-label" })
+                    <div class="col-md-6">
+                        @Html.TextBoxFor(m => m.CNICNo, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.CNICNo, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(m => m.DLicense, new { @class = "col-md-3 control-label" })
+                    <div class="col-md-6">
+                        @Html.PasswordFor(m => m.DLicense, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.DLicense, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-8">
+                        <input type="submit" value="Search" class="btn btn-default" />
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</section>
+<script>
+
+    //Goto search profile on click
+    $('#search').click(function () {
+        document.getElementById('about').style.display = "block";
+        $("html, body").scrollTop($(about).offset().top);
+
+    });
+
+    $(document).ready(function () {
+        var $btnSets = $('#responsive'),
+        $btnLinks = $btnSets.find('a');
+
+        $btnLinks.click(function (e) {
+            e.preventDefault();
+            $(this).siblings('a.active').removeClass("active");
+            $(this).addClass("active");
+            var index = $(this).index();
+            $("div.user-menu>div.user-menu-content").removeClass("active");
+            $("div.user-menu>div.user-menu-content").eq(index).addClass("active");
+        });
+    });
+
+    $(document).ready(function () {
+        $("[rel='tooltip']").tooltip();
+
+        $('.view').hover(
+            function () {
+                $(this).find('.caption').slideDown(250); //.fadeIn(250)
+            },
+            function () {
+                $(this).find('.caption').slideUp(250); //.fadeOut(205)
+            }
+        );
+    });
+</script>
