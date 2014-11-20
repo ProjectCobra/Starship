@@ -351,6 +351,8 @@
     <Content Include="obj\Release\Package\PackageTmp\Scripts\modernizr-2.6.2.js" />
     <Content Include="obj\Release\Package\PackageTmp\Scripts\respond.js" />
     <Content Include="obj\Release\Package\PackageTmp\Scripts\respond.min.js" />
+    <Content Include="obj\Release\CSAutoParameterize\transformed\Views\Web.config" />
+    <Content Include="obj\Release\CSAutoParameterize\transformed\Web.config" />
     <None Include="obj\Release\Package\PackageTmp\Scripts\_references.js" />
     <Content Include="obj\Release\_WPPLastBuildInfo.txt" />
     <Content Include="Scripts\angular-mocks.js" />
@@ -403,8 +405,6 @@
     <Content Include="obj\Release\CALVRI.csprojResolveAssemblyReference.cache" />
     <Content Include="obj\Release\CSAutoParameterize\original\Views\Web.config" />
     <Content Include="obj\Release\CSAutoParameterize\original\Web.config" />
-    <Content Include="obj\Release\CSAutoParameterize\transformed\Views\Web.config" />
-    <Content Include="obj\Release\CSAutoParameterize\transformed\Web.config" />
     <Content Include="obj\Release\DesignTimeResolveAssemblyReferencesInput.cache" />
     <Content Include="obj\Release\Package\PackageTmp\ClassDiagram1.cd" />
     <Content Include="obj\Release\Package\PackageTmp\fonts\glyphicons-halflings-regular.eot" />
