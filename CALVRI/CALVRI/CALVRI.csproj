@@ -305,7 +305,6 @@
     <Content Include="obj\Debug\CALVRI.dll" />
     <Content Include="obj\Debug\CALVRI.pdb" />
     <Content Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
-    <Content Include="Properties\PublishProfiles\calvri.pubxml.user" />
     <Content Include="Scripts\angular-mocks.js" />
     <Content Include="Scripts\angular.js" />
     <Content Include="Scripts\angular.min.js" />
