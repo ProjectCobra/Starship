@@ -175,6 +175,9 @@
     <Compile Include="Models\CNIC.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\TrafficWarden.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -297,6 +300,11 @@
     <Content Include="fonts\opensans-semibold-600.woff" />
     <Content Include="fonts\opensans-v6.woff" />
     <Content Include="fonts\robotoslab_bold.ttf" />
+    <Content Include="obj\Debug\CALVRI.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Debug\CALVRI.csprojResolveAssemblyReference.cache" />
+    <Content Include="obj\Debug\CALVRI.dll" />
+    <Content Include="obj\Debug\CALVRI.pdb" />
+    <Content Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
     <Content Include="Properties\PublishProfiles\calvri.pubxml.user" />
     <Content Include="Scripts\angular-mocks.js" />
     <Content Include="Scripts\angular.js" />
@@ -339,6 +347,7 @@
     <Content Include="img\Thumbs.db" />
     <Content Include="less\theme.less" />
     <Content Include="less\variables.less" />
+    <None Include="obj\Debug\__TestProfilesForFilePreview__\calvri.pubxml" />
     <None Include="Properties\PublishProfiles\calvri.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\custom.js" />
@@ -394,7 +403,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="obj\" />
+    <Folder Include="obj\Debug\TempPE\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
