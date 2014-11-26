@@ -85,6 +85,9 @@ C:\Users\Nida\Documents\GitHub\Starship\CALVRI\CALVRI\obj\Debug\CALVRI.pdb
 C:\Users\Sumbul\Documents\GitHub\Starship\CALVRI\CALVRI\bin\CALVRI.dll.config
 C:\Users\Sumbul\Documents\GitHub\Starship\CALVRI\CALVRI\bin\CALVRI.dll
 C:\Users\Sumbul\Documents\GitHub\Starship\CALVRI\CALVRI\bin\CALVRI.pdb
+C:\Users\Sumbul\Documents\GitHub\Starship\CALVRI\CALVRI\obj\Debug\CALVRI.csprojResolveAssemblyReference.cache
+C:\Users\Sumbul\Documents\GitHub\Starship\CALVRI\CALVRI\obj\Debug\CALVRI.dll
+C:\Users\Sumbul\Documents\GitHub\Starship\CALVRI\CALVRI\obj\Debug\CALVRI.pdb
 C:\Users\Sumbul\Documents\GitHub\Starship\CALVRI\CALVRI\bin\EntityFramework.xml
 C:\Users\Sumbul\Documents\GitHub\Starship\CALVRI\CALVRI\bin\EntityFramework.SqlServer.xml
 C:\Users\Sumbul\Documents\GitHub\Starship\CALVRI\CALVRI\bin\System.Web.Helpers.xml
@@ -108,7 +111,10 @@ C:\Users\Sumbul\Documents\GitHub\Starship\CALVRI\CALVRI\bin\Microsoft.Owin.Secur
 C:\Users\Sumbul\Documents\GitHub\Starship\CALVRI\CALVRI\bin\Microsoft.Owin.Security.Google.xml
 C:\Users\Sumbul\Documents\GitHub\Starship\CALVRI\CALVRI\bin\Microsoft.Owin.Security.Twitter.xml
 C:\Users\Sumbul\Documents\GitHub\Starship\CALVRI\CALVRI\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+<<<<<<< HEAD
 C:\Users\Sumbul\Documents\GitHub\Starship\CALVRI\CALVRI\obj\Debug\CALVRI.csprojResolveAssemblyReference.cache
 C:\Users\Sumbul\Documents\GitHub\Starship\CALVRI\CALVRI\obj\Debug\CALVRI.dll
 C:\Users\Sumbul\Documents\GitHub\Starship\CALVRI\CALVRI\obj\Debug\CALVRI.pdb
 C:\Users\Nida\Documents\GitHub\Starship\CALVRI\CALVRI\obj\Debug\CALVRI.csprojResolveAssemblyReference.cache
+=======
+>>>>>>> b7caeafe5bd5a06018592d685f77ca0cd8d07b83
