@@ -13,26 +13,6 @@ namespace CALVRI.Models
         public string Name { get; set; }
 
         [Required]
-<<<<<<< HEAD
-        [Display(Name = "CNICNumber")]
-        public int CNICNo{ get; set; }
-
-=======
-
-        [Display(Name = "CNICNumber")]
-        public int CNICNo { get; set; }
-
-
-        //[Display(Name = "CNIC")]
-        //public int CNICnum { get; set; }
-        //[Display(Name = "CNICNumber")]
-        //public int CNICNo { get; set; }
-
-        [Display(Name = "CNICNumber")]
-        public int CNICnum { get; set; }
->>>>>>> origin/master
-
-        [Required]
         [Display(Name = "Date of Birth")]
         public DateTime DOB { get; set; }
 
