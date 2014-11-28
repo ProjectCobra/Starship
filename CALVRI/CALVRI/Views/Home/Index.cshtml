@@ -119,18 +119,18 @@
                     <hr class="marginbot-50">
                 </div>
             </div>
-            <div class="row">
-                @using (Html.BeginForm("Search", "CNIC", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+            <div class="col-md-6">
+                @using (Html.BeginForm("Login", "CNIC", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
                 {
                     @Html.AntiForgeryToken()
                     <h4></h4>
                     <hr />
                     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                     <div class="form-group">
-                        @Html.LabelFor(m => m.Email, new { @class = "col-md-3 control-label" })
+                        @Html.LabelFor(m => m.Username, new { @class = "col-md-3 control-label" })
                         <div class="col-md-6">
-                            @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
-                            @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+                            @Html.TextBoxFor(m => m.Username, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.Username, "", new { @class = "text-danger" })
                         </div>
                     </div>
                     <div class="form-group">
@@ -140,13 +140,7 @@
                             @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
                         </div>
                     </div>
-                    <div class="form-group">
-                        @Html.LabelFor(m => m.Password, new { @class = "col-md-3 control-label" })
-                        <div class="col-md-6">
-                            @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
-                            @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
-                        </div>
-                    </div>
+                    
                     <div class="form-group">
                         <div class="col-md-offset-2 col-md-8">
                             <div class="checkbox">
@@ -162,6 +156,49 @@
                     </div>
                 }
             </div>
+
+
+
+
+            <div class="col-md-6">
+                @using (Html.BeginForm("Search", "CNIC", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                {
+                    @Html.AntiForgeryToken()
+                    <h4></h4>
+                    <hr />
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    
+                    <h5>CNIC Number: </h5> @Html.TextBox("CNICnum")
+                    <div class="form-group">
+                       
+                        <div class="col-md-3">
+                            
+                        </div>
+                    </div>
+                    <div class="form-group">
+                       
+                        <div class="col-md-3">
+                            <h5>Date of Birth: </h5> @Html.TextBox("DOB")
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <h5>Name of Mother: </h5> @Html.TextBox("NoM")
+                        <div class="col-md-3">
+                            
+                        </div>
+                    </div>
+                  
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-8">
+                            <input type="submit" value="Search" class="btn btn-default" />
+                        </div>
+                    </div>
+                }
+            </div>
+
+
+
+
         </div>
     </div>
 </section>
@@ -191,10 +228,10 @@
                     <hr />
                     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                     <div class="form-group">
-                        @Html.LabelFor(m => m.Email, new { @class = "col-md-3 control-label" })
+                        @Html.LabelFor(m => m.Username, new { @class = "col-md-3 control-label" })
                         <div class="col-md-6">
-                            @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
-                            @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+                            @Html.TextBoxFor(m => m.Username, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.Username, "", new { @class = "text-danger" })
                         </div>
                     </div>
                     <div class="form-group">

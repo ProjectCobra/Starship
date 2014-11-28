@@ -13,12 +13,16 @@ namespace CALVRI.Models
         public string Name { get; set; }
 
         [Required]
+        [Display(Name = "CNIC Number")]
+        public string CNICNo { get; set; }
+
+        [Required]
         [Display(Name = "Date of Birth")]
         public DateTime DOB { get; set; }
 
         [Required]
-        [Display(Name = "Place of Birth")]
-        public string Birthplace { get; set; }
+        [Display(Name = "Mother's name")]
+        public string NoM { get; set; }
 
         [Required]
         [Display(Name = "Driving License Number")]

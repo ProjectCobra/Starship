@@ -14,6 +14,19 @@ namespace CALVRI.Controllers
             return View();
         }
 
+        //public ActionResult Index(string CNICnum, string DL)
+        //{
+        //   
+        //    if(!string.IsNullOrEmpty(CNICnum))
+        //    {
+        //        if(!string.IsNullOrEmpty(DL)
+        //            {
+        //                var profile = db.CNICProfile.find({ CNICnum : CNICnum, DL : DL});
+        //            }
+        //    }
+        //    return View(profile);
+        //}
+
         // POST: Issue Challan
         public ActionResult IssueChallan()
         {
