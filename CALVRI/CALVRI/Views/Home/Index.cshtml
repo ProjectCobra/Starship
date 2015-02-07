@@ -106,7 +106,27 @@
                 <div class="col-lg-8 col-lg-offset-2">
                     <div class="wow bounceInDown" data-wow-delay="0.4s">
                         <div class="section-heading">
-                            <h2>CNIC Holder Login</h2>
+                            <h2>CNIC Holder</h2>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-lg-offset-5">
+                        <hr class="marginbot-50">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="wow bounceInDown" data-wow-delay="0.4s">
+                        <div class="section-heading">
+                            <h2>Login</h2>
+                            <i class="fa fa-2x fa-angle-down"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="wow bounceInDown" data-wow-delay="0.4s">
+                        <div class="section-heading">
+                            <h2>Verification</h2>
                             <i class="fa fa-2x fa-angle-down"></i>
                         </div>
                     </div>
@@ -115,52 +135,78 @@
         </div>
         <div class="container" id="loginForm">
             <div class="row">
-                <div class="col-lg-2 col-lg-offset-5">
-                    <hr class="marginbot-50">
-                </div>
-            </div>
-            <div class="row">
-                @using (Html.BeginForm("Search", "CNIC", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
-                {
-                    @Html.AntiForgeryToken()
-                    <h4></h4>
-                    <hr />
-                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                    <div class="form-group">
-                        @Html.LabelFor(m => m.Email, new { @class = "col-md-3 control-label" })
-                        <div class="col-md-6">
-                            @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
-                            @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        @Html.LabelFor(m => m.Password, new { @class = "col-md-3 control-label" })
-                        <div class="col-md-6">
-                            @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
-                            @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        @Html.LabelFor(m => m.Password, new { @class = "col-md-3 control-label" })
-                        <div class="col-md-6">
-                            @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
-                            @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="col-md-offset-2 col-md-8">
-                            <div class="checkbox">
-                                @Html.CheckBoxFor(m => m.RememberMe)
-                                @Html.LabelFor(m => m.RememberMe)
+                <div class="col-lg-6">
+                    @using (Html.BeginForm("Search", "CNIC", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                    {
+                        @Html.AntiForgeryToken()
+                        <h4></h4>
+                        <hr />
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.Email, new { @class = "col-md-3 control-label" })
+                            <div class="col-md-6">
+                                @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
                             </div>
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="col-md-offset-2 col-md-8">
-                            <input type="submit" value="Log in" class="btn btn-default" />
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.Password, new { @class = "col-md-3 control-label" })
+                            <div class="col-md-6">
+                                @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                            </div>
                         </div>
-                    </div>
-                }
+                        <div class="form-group">
+                            <div class="col-md-offset-2 col-md-8">
+                                <div class="checkbox">
+                                    @Html.CheckBoxFor(m => m.RememberMe)
+                                    @Html.LabelFor(m => m.RememberMe)
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-offset-2 col-md-8">
+                                <input type="submit" value="Log in" class="btn btn-default" />
+                            </div>
+                        </div>
+                    }
+                </div>
+                <div class="col-lg-6">
+                    @using (Html.BeginForm("Search", "CNIC", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                    {
+                        @Html.AntiForgeryToken()
+                        <h4></h4>
+                        <hr />
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.Email, new { @class = "col-md-3 control-label" })
+                            <div class="col-md-6">
+                                @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.Password, new { @class = "col-md-3 control-label" })
+                            <div class="col-md-6">
+                                @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-offset-2 col-md-8">
+                                <div class="checkbox">
+                                    @Html.CheckBoxFor(m => m.RememberMe)
+                                    @Html.LabelFor(m => m.RememberMe)
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-offset-2 col-md-8">
+                                <input type="submit" value="Log in" class="btn btn-default" />
+                            </div>
+                        </div>
+                    }
+                </div>
             </div>
         </div>
     </div>
@@ -334,74 +380,74 @@
 </section>
 <!-- /Section: contact -->
 @*<div class="row">
+            <div class="bp-component">
+                <div class="jumbotron">
+                    <h1>CALVRI</h1>
+                    <p class="lead">Manage your traffic services.<br /> Anytime. Anywhere.
+                    <ul>
+                        <li class="btn btn-primary" style="color:white">@Html.ActionLink("CNIC Holder", "Login", "Account")</li>
+                        <li class="btn btn-success">@Html.ActionLink("Traffic Warden", "Login", "Account")</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4">
+                <h3>What we offer</h3>
+                <p>
+                    <ul>
+                        <li>Search and Access your licensing credentials</li>
+                        <li>Payment of challans and token taxes online </li>
+                        <li>Apply for your driving license renewal online </li>
+                    </ul>
+                </p>
+                <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+            </div>
+            <div class="col-md-4">
+                <h2>Get more libraries</h2>
+                <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
+                <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+            </div>
+            <div class="col-md-4">
+                <h2>Web Hosting</h2>
+                <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
+                <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+            </div>
+        </div><div class="row">
         <div class="bp-component">
             <div class="jumbotron">
-                <h1>CALVRI</h1>
-                <p class="lead">Manage your traffic services.<br /> Anytime. Anywhere.
-                <ul>
-                    <li class="btn btn-primary" style="color:white">@Html.ActionLink("CNIC Holder", "Login", "Account")</li>
-                    <li class="btn btn-success">@Html.ActionLink("Traffic Warden", "Login", "Account")</li>
-                </ul>
+                <h1></h1>
+                <p class="lead">
+                    <br />
+                    <ul>
+                        <li class="btn btn-primary" style="color:white"></li>
+                        <li class="btn btn-success"></li>
+                    </ul>
             </div>
         </div>
     </div>
 
     <div class="row">
         <div class="col-md-4">
-            <h3>What we offer</h3>
+            <h3></h3>
             <p>
                 <ul>
-                    <li>Search and Access your licensing credentials</li>
-                    <li>Payment of challans and token taxes online </li>
-                    <li>Apply for your driving license renewal online </li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
                 </ul>
             </p>
-            <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+            <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301865"></a></p>
         </div>
         <div class="col-md-4">
-            <h2>Get more libraries</h2>
-            <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-            <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+            <h2></h2>
+            <p></p>
+            <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301866"></a></p>
         </div>
         <div class="col-md-4">
-            <h2>Web Hosting</h2>
-            <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-            <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+            <h2></h2>
+            <p></p>
+            <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867"></a></p>
         </div>
-    </div><div class="row">
-    <div class="bp-component">
-        <div class="jumbotron">
-            <h1></h1>
-            <p class="lead">
-                <br />
-                <ul>
-                    <li class="btn btn-primary" style="color:white"></li>
-                    <li class="btn btn-success"></li>
-                </ul>
-        </div>
-    </div>
-</div>
-
-<div class="row">
-    <div class="col-md-4">
-        <h3></h3>
-        <p>
-            <ul>
-                <li></li>
-                <li></li>
-                <li></li>
-            </ul>
-        </p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301865"></a></p>
-    </div>
-    <div class="col-md-4">
-        <h2></h2>
-        <p></p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301866"></a></p>
-    </div>
-    <div class="col-md-4">
-        <h2></h2>
-        <p></p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867"></a></p>
-    </div>
-</div>*@
+    </div>*@

@@ -3,16 +3,21 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using CALVRI.Models;
+using CALVRI.DAL;
 
 namespace CALVRI.Controllers
 {
-    public class CNICController : Controller
+    public class CNICController : Controller, IDisposable
     {
-        // GET: CNIC Profile
-        public ActionResult Index()
-        {
-            return View();
-        }
+        private Dal dal = new Dal();
+        private bool disposed = false;
+
+        //// GET: CNIC Profile
+        //public ActionResult Index()
+        //{
+        //    return View();
+        //}
 
         //POST: Paychallan
         [HttpPost]
@@ -52,5 +57,61 @@ namespace CALVRI.Controllers
         {
             return View();
         }
+
+
+        // GET: /CNIC/
+
+        public ActionResult Index()
+        {
+            return View(dal.GetProfile());
+        }
+
+        //
+        // GET: /CNIC/Create
+
+        public ActionResult Create()
+        {
+            return View();
+        }
+
+        //
+        // POST: /CNIC/Create
+
+        [HttpPost]
+        public ActionResult Create(CNIC CNIC_profile)
+        {
+            try
+            {
+                dal.CreateTask(CNIC_profile);
+                return RedirectToAction("Index");
+            }
+            catch
+            {
+                return View();
+            }
+        }
+
+        # region IDisposable
+
+        new protected void Dispose()
+        {
+            this.Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+
+        new protected virtual void Dispose(bool disposing)
+        {
+            if (!this.disposed)
+            {
+                if (disposing)
+                {
+                    this.dal.Dispose();
+                }
+            }
+
+            this.disposed = true;
+        }
+
+        # endregion
     }
 }
