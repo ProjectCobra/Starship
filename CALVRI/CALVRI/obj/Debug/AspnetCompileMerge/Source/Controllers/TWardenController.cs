@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace CALVRI.Controllers
+namespace CALVRI
 {
     public class TWardenController : Controller
     {

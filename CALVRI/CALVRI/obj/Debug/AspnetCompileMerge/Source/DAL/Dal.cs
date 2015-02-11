@@ -6,7 +6,7 @@ using CALVRI.Models;
 using MongoDB.Driver;
 using System.Configuration;
 
-namespace CALVRI.DAL
+namespace CALVRI
 {
     public class Dal : IDisposable
     {

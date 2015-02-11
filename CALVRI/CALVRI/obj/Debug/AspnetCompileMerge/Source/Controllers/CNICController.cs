@@ -6,7 +6,7 @@ using System.Web.Mvc;
 using CALVRI.Models;
 using CALVRI.DAL;
 
-namespace CALVRI.Controllers
+namespace CALVRI
 {
     public class CNICController : Controller, IDisposable
     {
