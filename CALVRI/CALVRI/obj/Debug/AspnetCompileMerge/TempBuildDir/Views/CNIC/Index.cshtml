@@ -1,0 +1,507 @@
+﻿@using CALVRI.Models
+@model IEnumerable<CALVRI.Models.CNIC>
+
+@{
+    ViewBag.Title = "IndexC";
+}
+<link rel="stylesheet" type="text/css" href="~/Content/IndexW.css">
+<link href="http://fontawesome.io/assets/font-awesome/css/font-awesome.css" rel="stylesheet" media="screen">
+<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="http://code.jquery.com/ui/1.11.0/jquery-ui.min.js"></script>
+
+<section id="intro" class="intro home-section text-center" style="padding-top: 200px">
+    <div class="container">
+        <div class="row user-menu-container square">
+            <div class="col-md-7 user-details">
+                <div class="row bg-primary white">
+                    <div class="col-md-6 no-pad">
+                        <div class="user-pad">
+                            @*<table>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>CNICNo</th>
+                                    <th>DOB</th>
+
+                                </tr>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Name)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.CNICNo)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.DOB)
+                                        </td>
+
+                                    </tr>
+                                }
+                            </table>*@
+                            <h3>CNIC Holder Name</h3> @*Html.DisplayFor(modelItem => item.Name)*@
+                            <h4 class="white"><i class="glyphicon glyphicon-user"></i> CNIC Number</h4>
+                            <h4 class="white"><i class="glyphicon glyphicon-credit-card"></i> Driving License Number</h4>
+                            <h4 class="white"><i class="glyphicon glyphicon-calendar"></i> Date of Birth</h4>
+                        </div>
+                    </div>
+                    <div class="col-md-6 no-pad">
+                        <div class="user-image">
+                            <img src="~/img/team/4.jpg" class="img-responsive thumbnail">
+                        </div>
+                    </div>
+                </div>
+                <div class="row overview">
+                    <div class="col-md-4 user-pad text-center">
+                        <button type="button" class="btn btn-labeled btn-info" id="search">
+                            <span class="btn-label"><i class="glyphicon glyphicon-user"></i></span>License Details
+                        </button>
+                        @*<h4>2,784</h4>*@
+                    </div>
+                    <div class="col-md-4 user-pad text-center">
+                        <button type="button" class="btn btn-labeled btn-danger" id="challan">
+                            <span class="btn-label"><i class="glyphicon glyphicon-certificate"></i></span>Challans
+                        </button>
+                    </div>
+                    <div class="col-md-4 user-pad text-center">
+                        <button type="button" class="btn btn-labeled btn-danger" id="vehicle">
+                            <span class="btn-label"><i class="glyphicon glyphicon-road"></i></span>Vehicles
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-1 user-menu-btns">
+                <div class="btn-group-vertical square" id="responsive">
+                    <a href="#" class="btn btn-block btn-default active">
+                        <i class="glyphicon glyphicon-bell"></i>
+                    </a>
+                    <a href="#" class="btn btn-default">
+                        <i class="glyphicon glyphicon-bell"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-4 user-menu user-pad">
+                <div class="user-menu-content active">
+                    <h3>
+                        Live Alerts
+                    </h3>
+                    <ul class="user-menu-list">
+                        <li>
+                            <h4><i class="glyphicon glyphicon-chevron-right coral"></i> 02 45pm : <small><strong>Traffic Jam at Aabpara Intersection</strong></small></h4>
+                        </li>
+                        <li>
+                            <h4><i class="glyphicon glyphicon-chevron-right coral"></i> 01 00pm : <small><strong>Traffic Lights down at Zero Point Intersection</strong></small></h4>
+                        </li>
+                        <li>
+                            <button type="button" class="btn btn-labeled btn-info" href="#">
+                                <span class="btn-label"><i class="glyphicon glyphicon-bell"></i></span>View all activity today
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+                <div class="user-menu-content">
+                    <h3>
+                        Statistics
+                    </h3>
+                    <ul class="user-menu-list">
+                        <li>
+                            <h4><i class="glyphicon glyphicon-chevron-right coral"></i> Total Challans issued: <small class="coral"><strong>95</strong></small></h4>
+                        </li>
+                        <li>
+                            <h4><i class="glyphicon glyphicon-chevron-right coral"></i> Highest Challan issue area: <small class="coral"><strong>Kashmir Highway</strong></small></h4>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="about" class="home-section text-center" style="display:none">
+    <div class="heading-about">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <div class="wow bounceInDown" data-wow-delay="0.4s">
+                        <div class="section-heading">
+                            <h2>Driving License</h2>
+                            <i class="fa fa-2x fa-angle-down"></i>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    @*Driving License Data table*@
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-2 col-lg-offset-5">
+                <hr class="marginbot-50">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="table-responsive">
+                    <table id="mytable" class="table table-bordred table-striped">
+                        <tbody>
+                            <tr>
+                                <td>Driving License Number</td>
+                                <td>xxxxxxxxxx</td>
+                            </tr>
+
+                            <tr>
+                                <td>Date of issue</td>
+                                <td>DD/MM/YYYY</td>
+                            </tr>
+
+                            <tr>
+                                <td>Expiry Date</td>
+                                <td>DD/MM/YYYY</td>
+                            </tr>
+
+                            <tr>
+                                <td>Renewal Date</td>
+                                <td>DD/MM/YYYY</td>
+                            </tr>
+
+                            <tr>
+                                <td>Vehicles Authorized</td>
+                                <td>xxxxxx</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="service" class="home-section text-center bg-gray" style="display:none">
+    <div class="heading-about">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <div class="wow bounceInDown" data-wow-delay="0.4s">
+                        <div class="section-heading">
+                            <h2>Challans</h2>
+                            <i class="fa fa-2x fa-angle-down"></i>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    @*Challan Data table*@
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-2 col-lg-offset-5">
+                <hr class="marginbot-50">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="table-responsive">
+                    <table id="mytable" class="table table-bordred table-striped">
+
+                        <thead>
+                            <tr>
+                                <td>
+                                    Total Challans:
+                                </td>
+                                <td>
+                                    xxxx
+                                </td>
+                                <td></td>
+                                <td></td>
+                                <td>Pay</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Challan 1</td>
+                                <td>Place of Violation</td>
+                                <td>Viotation Type</td>
+                                <td>Amount Due</td>
+                                <td><p><button class="btn btn-danger btn-xs" data-title="Pay" data-toggle="modal" data-target="#pay" data-placement="top" rel="tooltip"><span class="glyphicon glyphicon-credit-card"></span></button></p></td>
+                            </tr>
+
+                            <tr>
+                                <td>Challan 2</td>
+                                <td>Place of Violation</td>
+                                <td>Viotation Type</td>
+                                <td>Amount Due</td>
+                                <td><p><button class="btn btn-primary btn-xs disabled" data-title="Pay" data-toggle="modal" data-target="#pay" data-placement="top" rel="tooltip"><span class="glyphicon glyphicon-credit-card"></span></button></p></td>
+                            </tr>
+
+                            <tr>
+                                <td>Challan 3</td>
+                                <td>Place of Violation</td>
+                                <td>Viotation Type</td>
+                                <td>Amount Due</td>
+                                <td><p><button class="btn btn-primary btn-xs disabled" data-title="Pay" data-toggle="modal" data-target="#pay" data-placement="top" rel="tooltip"><span class="glyphicon glyphicon-credit-card"></span></button></p></td>
+                            </tr>
+
+                            <tr>
+                                <td>Challan 4</td>
+                                <td>Place of Violation</td>
+                                <td>Viotation Type</td>
+                                <td>Amount Due</td>
+                                <td><p><button class="btn btn-primary btn-xs disabled" data-title="Pay" data-toggle="modal" data-target="#pay" data-placement="top" rel="tooltip"><span class="glyphicon glyphicon-credit-card"></span></button></p></td>
+                            </tr>
+
+                            <tr>
+                                <td>Challan 5</td>
+                                <td>Place of Violation</td>
+                                <td>Viotation Type</td>
+                                <td>Amount Due</td>
+                                <td><p><button class="btn btn-primary btn-xs disabled" data-title="Pay" data-toggle="modal" data-target="#pay" data-placement="top" rel="tooltip"><span class="glyphicon glyphicon-credit-card"></span></button></p></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<div class="modal fade" id="pay" tabindex="-1" role="dialog" aria-labelledby="pay" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4 class="modal-title custom_align" id="Heading">Pay</h4>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <input class="form-control " type="text" placeholder="CNIC Number">
+                </div>
+                <div class="form-group">
+
+                    <input class="form-control " type="text" placeholder="License Number">
+                </div>
+                <div class="form-group">
+                    <textarea rows="2" class="form-control" placeholder="Violation"></textarea>
+                </div>
+                <div class="form-group">
+                    <textarea rows="2" class="form-control" placeholder="Amount Due"></textarea>
+                </div>
+                <div class="form-group">
+                    <textarea rows="2" class="form-control" placeholder="Credit Card number"></textarea>
+                </div>
+                <div class="form-group">
+                    <textarea rows="2" class="form-control" placeholder="Credit Card Holder Name"></textarea>
+                </div>
+                <div class="form-group">
+                    <textarea rows="2" class="form-control" placeholder="CVV code"></textarea>
+                </div>
+            </div>
+            <div class="modal-footer ">
+                <button type="button" class="btn btn-warning btn-lg" style="width: 100%;"><span class="glyphicon glyphicon-ok-sign"></span> Pay</button>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+
+<section id="contact" class="home-section text-center " style="display:none">
+    <div class="heading-about">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <div class="wow bounceInDown" data-wow-delay="0.4s">
+                        <div class="section-heading">
+                            <h2>Vehicles</h2>
+                            <i class="fa fa-2x fa-angle-down"></i>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    @*Vehicle Data table*@
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-2 col-lg-offset-5">
+                <hr class="marginbot-50">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="table-responsive">
+                    <table id="mytable" class="table table-bordred table-striped">
+
+                        <thead>
+                            <tr>
+                                <td>
+                                    Vehicles Owned:
+                                </td>
+                                <td>
+                                    xxxx
+                                </td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>Pay</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Vehicle Make</td>
+                                <td>Model</td>
+                                <td>Color</td>
+                                <td>Engine Number</td>
+                                <td>Chasis Number</td>
+                                <td>Vehicle Registration Number</td>
+                                <td>Registration Date</td>
+                                <td>Road/Token Tax Due Date</td>
+                                <td><p><button class="btn btn-danger btn-xs" data-title="Pay" data-toggle="modal" data-target="#payR" data-placement="top" rel="tooltip"><span class="glyphicon glyphicon-credit-card"></span></button></p></td>
+                            </tr>
+
+                            <tr>
+                                <td>Vehicle Make</td>
+                                <td>Model</td>
+                                <td>Color</td>
+                                <td>Engine Number</td>
+                                <td>Chasis Number</td>
+                                <td>Vehicle Registration Number</td>
+                                <td>Registration Date</td>
+                                <td>Road/Token Tax Due Date</td>
+                                <td><p><button class="btn btn-danger btn-xs " data-title="Pay" data-toggle="modal" data-target="#payR" data-placement="top" rel="tooltip"><span class="glyphicon glyphicon-credit-card"></span></button></p></td>
+                            </tr>
+
+                            <tr>
+                                <td>Vehicle Make</td>
+                                <td>Model</td>
+                                <td>Color</td>
+                                <td>Engine Number</td>
+                                <td>Chasis Number</td>
+                                <td>Vehicle Registration Number</td>
+                                <td>Registration Date</td>
+                                <td>Road/Token Tax Due Date</td>
+                                <td><p><button class="btn btn-danger btn-xs " data-title="Pay" data-toggle="modal" data-target="#payR" data-placement="top" rel="tooltip"><span class="glyphicon glyphicon-credit-card"></span></button></p></td>
+                            </tr>
+
+                            <tr>
+                                <td>Vehicle Make</td>
+                                <td>Model</td>
+                                <td>Color</td>
+                                <td>Engine Number</td>
+                                <td>Chasis Number</td>
+                                <td>Vehicle Registration Number</td>
+                                <td>Registration Date</td>
+                                <td>Road/Token Tax Due Date</td>
+                                <td><p><button class="btn btn-primary btn-xs disabled" data-title="Pay" data-toggle="modal" data-target="#payR" data-placement="top" rel="tooltip"><span class="glyphicon glyphicon-credit-card"></span></button></p></td>
+                            </tr>
+
+                            <tr>
+                                <td>Vehicle Make</td>
+                                <td>Model</td>
+                                <td>Color</td>
+                                <td>Engine Number</td>
+                                <td>Chasis Number</td>
+                                <td>Vehicle Registration Number</td>
+                                <td>Registration Date</td>
+                                <td>Road/Token Tax Due Date</td>
+                                <td><p><button class="btn btn-primary btn-xs disabled" data-title="Pay" data-toggle="modal" data-target="#payR" data-placement="top" rel="tooltip"><span class="glyphicon glyphicon-credit-card"></span></button></p></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<div class="modal fade" id="payR" tabindex="-1" role="dialog" aria-labelledby="payR" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4 class="modal-title custom_align" id="Heading">Pay</h4>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <input class="form-control " type="text" placeholder="CNIC Number">
+                </div>
+                <div class="form-group">
+                    <textarea rows="2" class="form-control" placeholder="Vehicle Registration Number"></textarea>
+                </div>
+                <div class="form-group">
+                    <textarea rows="2" class="form-control" placeholder="Amount Due"></textarea>
+                </div>
+                <div class="form-group">
+                    <textarea rows="2" class="form-control" placeholder="Credit Card number"></textarea>
+                </div>
+                <div class="form-group">
+                    <textarea rows="2" class="form-control" placeholder="Credit Card Holder Name"></textarea>
+                </div>
+                <div class="form-group">
+                    <textarea rows="2" class="form-control" placeholder="CVV code"></textarea>
+                </div>
+            </div>
+            <div class="modal-footer ">
+                <button type="button" class="btn btn-warning btn-lg" style="width: 100%;"><span class="glyphicon glyphicon-ok-sign"></span> Pay</button>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+
+<script>
+
+    //Goto License Details on click
+    $('#search').click(function () {
+        document.getElementById('about').style.display = "block";
+        $("html, body").scrollTop($(about).offset().top);
+
+    });
+
+    //Goto Challan Details on click
+    $('#challan').click(function () {
+        document.getElementById('service').style.display = "block";
+        $("html, body").scrollTop($(service).offset().top);
+
+    });
+
+    //Goto Vehicle Details on click
+    $('#vehicle').click(function () {
+        document.getElementById('contact').style.display = "block";
+        $("html, body").scrollTop($(contact).offset().top);
+
+    });
+
+    $(document).ready(function () {
+        var $btnSets = $('#responsive'),
+        $btnLinks = $btnSets.find('a');
+
+        $btnLinks.click(function (e) {
+            e.preventDefault();
+            $(this).siblings('a.active').removeClass("active");
+            $(this).addClass("active");
+            var index = $(this).index();
+            $("div.user-menu>div.user-menu-content").removeClass("active");
+            $("div.user-menu>div.user-menu-content").eq(index).addClass("active");
+        });
+    });
+
+    $(document).ready(function () {
+        $("[rel='tooltip']").tooltip();
+
+        $('.view').hover(
+            function () {
+                $(this).find('.caption').slideDown(250); //.fadeIn(250)
+            },
+            function () {
+                $(this).find('.caption').slideUp(250); //.fadeOut(205)
+            }
+        );
+    });
+
+
+</script>
