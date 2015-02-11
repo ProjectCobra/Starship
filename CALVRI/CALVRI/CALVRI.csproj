@@ -258,12 +258,7 @@
     <Content Include="img\online.png" />
     <Content Include="img\pay.png" />
     <Content Include="img\spinner.gif" />
-    <Content Include="img\team\1.jpg" />
-    <Content Include="img\team\2.jpg" />
-    <Content Include="img\team\3.jpg" />
     <Content Include="img\team\4.jpg" />
-    <Content Include="img\team\bg1.jpg" />
-    <Content Include="img\team\thumb-3.jpg" />
     <Content Include="img\web.png" />
     <Content Include="fonts\opensans-light.woff" />
     <Content Include="fonts\opensans-semibold-600.woff" />
