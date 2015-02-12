@@ -641,7 +641,7 @@ Parallax
 }
 
 @-webkit-keyframes pulse {    
-    0% {
+    0 {
         -webkit-transform: scale(1);
         transform: scale(1);
     }
@@ -658,7 +658,7 @@ Parallax
 }
 
 @-moz-keyframes pulse {    
-    0% {
+    0 {
         -moz-transform: scale(1);
         transform: scale(1);
     }
