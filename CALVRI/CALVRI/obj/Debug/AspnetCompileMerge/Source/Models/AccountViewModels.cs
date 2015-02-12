@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace CALVRI
+namespace CALVRI.Models
 {
     public class ExternalLoginConfirmationViewModel
     {

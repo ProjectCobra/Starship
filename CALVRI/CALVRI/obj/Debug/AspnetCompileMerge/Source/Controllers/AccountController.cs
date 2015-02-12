@@ -12,7 +12,7 @@ using Microsoft.Owin.Security;
 using Owin;
 using CALVRI.Models;
 
-namespace CALVRI
+namespace CALVRI.Controllers
 {
     [Authorize]
     public class AccountController : Controller
