@@ -305,11 +305,11 @@ hr {
 	width:100%;
 	position:relative;
 	
-	background: url(../img/bg1.png) no-repeat top center;
+	background: url(../img/bg1.jpg) no-repeat top center;
 }
 
 #intro.intro {
-	padding:20% 0 0 0;
+	padding:7% 0 0 0;
 }
 
 .intro .slogan {
@@ -330,7 +330,7 @@ hr {
 }
 
 .intro .slogan h2 {
-	color: #FFF;
+	color: #33475C;
 	text-shadow: none;
 	font-size: 60px;
 	line-height: 60px;
@@ -346,8 +346,9 @@ hr {
 }
 
 .intro .slogan h4 {
-	color: #fff;
-	text-shadow: -1px 1px 1px #000;
+	color: #091928;
+	/*text-shadow: -1px 1px 1px #000*/;
+    font-family: Montserrat, sans-serif;
 }
 
 

@@ -5,11 +5,19 @@
     ViewBag.Title = "Home Page";
 }
 <!-- Section: intro -->
-<section id="intro" class="intro">
+@*<section >
+    <div>
+        <img src="~/img/logo.png" alt="" class="img-responsive img-circle center-block" style="max-height:30% ;max-width:30%; margin-top:1px;" />
+    </div>
+</section>*@
+<section id="intro" class="intro" style="margin-top:1px">
 
+    
     <div class="slogan">
-        <h2>CALVRI</h2>
-        <h4>MANAGE YOUR TRAFFIC SERVICES. ANYWHERE</h4>
+        
+        @*<h2>CALVRI</h2>*@
+        <img src="~/img/logo.png" alt="" class="img-responsive img-circle center-block" style="max-height:30% ;max-width:30%; margin-top:1px; margin-bottom:1px" />
+        <h4>Manage your Traffic Services. <br> Anytime. Anywhere.</h4>
         <ul>
             <li class="btn btn-default"><a href="#service">CNIC Holder</a></li>
             <li class="btn btn-default"><a href="#contact">Traffic Warden</a></li>
@@ -136,7 +144,7 @@
         <div class="container" id="loginForm">
             <div class="row">
                 <div class="col-lg-6">
-                    @using (Html.BeginForm("Search", "CNIC", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                    @using (Html.BeginForm("Index", "CNIC", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
                     {
                         @Html.AntiForgeryToken()
                         <h4></h4>
@@ -172,7 +180,7 @@
                     }
                 </div>
                 <div class="col-lg-6">
-                    @using (Html.BeginForm("Search", "CNIC", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                    @using (Html.BeginForm("Index", "CNIC", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
                     {
                         @Html.AntiForgeryToken()
                         <h4></h4>
@@ -202,7 +210,7 @@
                         </div>
                         <div class="form-group">
                             <div class="col-md-offset-2 col-md-8">
-                                <input type="submit" value="Log in" class="btn btn-default" />
+                                <input type="submit" value="Log in" class="btn btn-default"  />
                             </div>
                         </div>
                     }
@@ -230,7 +238,7 @@
         </div>
         <div class="container" id="loginForm">
             <div class="row">
-                @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                @using (Html.BeginForm("Index", "TWarden", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
                 {
                     @Html.AntiForgeryToken()
                     <h4></h4>

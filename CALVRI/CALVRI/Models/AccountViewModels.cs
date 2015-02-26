@@ -5,7 +5,7 @@ namespace CALVRI.Models
     public class ExternalLoginConfirmationViewModel
     {
         [Required]
-        [EmailAddress]
+        //[EmailAddress]
         [Display(Name = "Username")]
         public string Username { get; set; }
     }
@@ -38,7 +38,7 @@ namespace CALVRI.Models
     public class LoginViewModel
     {
         [Required]
-        [EmailAddress]
+        //[EmailAddress]
         [Display(Name = "Username")]
         public string Username { get; set; }
 
@@ -54,7 +54,7 @@ namespace CALVRI.Models
     public class RegisterViewModel
     {
         [Required]
-        [EmailAddress]
+        //[EmailAddress]
         [Display(Name = "Username")]
         public string Username { get; set; }
 
@@ -73,7 +73,7 @@ namespace CALVRI.Models
     public class ResetPasswordViewModel
     {
         [Required]
-        [EmailAddress]
+        //[EmailAddress]
         [Display(Name = "Username")]
         public string Username { get; set; }
 
@@ -94,7 +94,7 @@ namespace CALVRI.Models
     public class ForgotPasswordViewModel
     {
         [Required]
-        [EmailAddress]
+        //[EmailAddress]
         [Display(Name = "Username")]
         public string Username { get; set; }
     }
