@@ -1,12 +1,7 @@
 C:\Users\Sumbul\Documents\GitHub\Starship\CALVRI\CALVRI\bin\CALVRI.dll.config
 C:\Users\Sumbul\Documents\GitHub\Starship\CALVRI\CALVRI\bin\CALVRI.dll
 C:\Users\Sumbul\Documents\GitHub\Starship\CALVRI\CALVRI\bin\CALVRI.pdb
-C:\Users\Sumbul\Documents\GitHub\Starship\CALVRI\CALVRI\obj\Release\CALVRI.csprojResolveAssemblyReference.cache
 C:\Users\Sumbul\Documents\GitHub\Starship\CALVRI\CALVRI\obj\Release\CALVRI.dll
 C:\Users\Sumbul\Documents\GitHub\Starship\CALVRI\CALVRI\obj\Release\CALVRI.pdb
-C:\Users\Sumbul\Documents\GitHub\Starship\CALVRI\CALVRI\bin\AWSSDK.dll
-C:\Users\Sumbul\Documents\GitHub\Starship\CALVRI\CALVRI\bin\AWSSDK.pdb
-C:\Users\Sumbul\Documents\GitHub\Starship\CALVRI\CALVRI\bin\MongoDB.Bson.dll
-C:\Users\Sumbul\Documents\GitHub\Starship\CALVRI\CALVRI\bin\MongoDB.Driver.dll
-C:\Users\Sumbul\Documents\GitHub\Starship\CALVRI\CALVRI\bin\MongoDB.Bson.xml
-C:\Users\Sumbul\Documents\GitHub\Starship\CALVRI\CALVRI\bin\MongoDB.Driver.xml
+C:\Users\Sumbul\Documents\GitHub\Starship\CALVRI\CALVRI\bin\Microsoft.Web.Helpers.dll
+C:\Users\Sumbul\Documents\GitHub\Starship\CALVRI\CALVRI\obj\Release\CALVRI.csprojResolveAssemblyReference.cache
