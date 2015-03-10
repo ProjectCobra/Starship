@@ -329,15 +329,15 @@
                                     <td>@doc.RegDate.ToShortDateString()</td>
                                     <td>@doc.RTDate.ToShortDateString()</td>
                                     <td>
-                                           @if(@doc.PaidRT == false)
+                                        @if (@doc.PaidRT == false)
                                         {
                                             <p><button class="btn btn-danger btn-xs" data-title="Pay" data-toggle="modal" data-target="#payR" data-placement="top" rel="tooltip"><span class="glyphicon glyphicon-credit-card"></span></button></p>
 
                                         }
-                                           else
-                                           {
+                                        else
+                                        {
                                             <p><button class="btn btn-primary btn-xs" data-title="Pay" disabled><span class="glyphicon glyphicon-credit-card"></span></button></p>
-                                           }
+                                        }
                                     </td>
                                 </tr>
                             };

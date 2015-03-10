@@ -28,7 +28,7 @@ namespace CALVRI.Controllers
             MongoHelper<twarden> model = new MongoHelper<twarden>();
             ViewBag.collection = model.Getdb(col);
             ViewBag.profiles = model.Getallprofiles(col);
-            ViewBag.profile = model.Getprofile(CNICNo,col);
+            ViewBag.profile = model.Get_tw_profile(CNICNo,col);
             return View();
         }
 
@@ -59,6 +59,7 @@ namespace CALVRI.Controllers
         // POST: Report Incident 
         public ActionResult ReportIncident()
         {
+
             return View();
         }
 
@@ -75,10 +76,25 @@ namespace CALVRI.Controllers
         }
 
         // GET: Search
-        public ActionResult Search()
+        public ActionResult Search(cnic model, string returnUrl)
         {
+            ulong CNICNo = model.CNICNo;
+            ulong v_dl = model.DLicense;
 
-            return View();
+            string col = "cnic";
+            MongoHelper<cnic> profile = new MongoHelper<cnic>();
+            //ViewBag.collection = profile.Getdb(col);
+            var v_prof = profile.Get_v_profile(CNICNo, v_dl, col);
+
+            if (v_prof != null)
+            {
+                String id = v_prof.id.ToString();
+                return RedirectToAction("IndexById", "CNIC", new{id = id});
+            }
+            else
+            {
+                return RedirectToAction("Notfound", "Home");
+            }
         }
     }
 }

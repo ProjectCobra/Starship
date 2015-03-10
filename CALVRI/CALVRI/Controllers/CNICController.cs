@@ -22,26 +22,39 @@ namespace CALVRI.Controllers
             MongoHelper<cnic> model = new MongoHelper<cnic>();
             ViewBag.collection = model.Getdb(col);
             ViewBag.profiles = model.Getallprofiles(col);
-            ViewBag.profile = model.Getprofile(CNICNo,col);
+            ViewBag.profile = model.Get_tw_profile(CNICNo, col);
             return View();
         }
 
+        // GET: /CNIC/CNICNo
+        //[HttpGet]
+        [Route("{controller}/{action}/id:String")]
+        public ActionResult IndexById(String id)
+        {
+            //ulong CNICNo = 3660308805460;
+            var v_id = ObjectId.Parse(id);
+            string col = "cnic";
+            MongoHelper<cnic> model = new MongoHelper<cnic>();
+            //ViewBag.collection = model.Getdb(col);
+            //ViewBag.profiles = model.Getallprofiles(col);
+            //var V_profile = model.Get_tw_profile(CNICNo, col);
+            //ViewBag.v_profile = V_profile;
+            ViewBag.profile = model.Getprofile(v_id, col);
+            return View();
+        }
         //POST: Paychallan
-        [HttpPost]
         public ActionResult Paychallan()
         {
             return View();
         }
 
         //POST: Pay Road Tax
-        [HttpPost]
         public ActionResult PayRT()
         {
             return View();
         }
 
         //POST: Paychallan
-        [HttpPost]
         public ActionResult LicenseRenew()
         {
             return View();

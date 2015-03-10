@@ -1,6 +1,6 @@
 ﻿@using CALVRI.Models
-@model cnic
 
+@model cnic
 @{
     ViewBag.Title = "IndexW";
 }
@@ -160,13 +160,63 @@
                 </div>
             </div>
             <div class="modal-footer ">
-                <button type="button" class="btn btn-warning btn-lg" style="width: 100%;"><span class="glyphicon glyphicon-ok-sign"></span>Issue Challan</button>
+                <button type="button" class="btn btn-warning btn-lg" style="width: 100%;"><span class="glyphicon glyphicon-ok-sign"></span>Report</button>
             </div>
         </div>
         <!-- /.modal-content -->
     </div>
     <!-- /.modal-dialog -->
 </div>
+
+@*<section id="about" class="home-section text-center" style="display:none">
+    <div class="heading-about">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <div class="wow bounceInDown" data-wow-delay="0.4s">
+                        <div class="section-heading">
+                            <h2>REPORT INCIDENT</h2>
+                            <i class="fa fa-2x fa-angle-down"></i>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container" id="loginForm">
+        <div class="row">
+            <div class="col-lg-2 col-lg-offset-5">
+                <hr class="marginbot-50">
+            </div>
+        </div>
+        <div class="row">
+            @using (Html.BeginForm("ReportIncident", "TWarden", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+            {
+                //@Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="form-group">
+                    @Html.LabelFor(p => p.DateofIncident, new { @class = "col-md-4 control-label" })
+                    <div class="col-md-6">
+                        @Html.TextBoxFor(m => m.CNICNo, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.CNICNo, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(m => m.DLicense, new { @class = "col-md-4 control-label" })
+                    <div class="col-md-6">
+                        @Html.TextBoxFor(m => m.DLicense, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.DLicense, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-8">
+                        <input type="submit" value="Search" class="btn btn-default" />
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</section>*@
 <section id="about" class="home-section text-center" style="display:none">
     <div class="heading-about">
         <div class="container">
@@ -192,8 +242,8 @@
         <div class="row">
             @using (Html.BeginForm("Search", "TWarden", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
             {
-                @Html.AntiForgeryToken()
-                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                CALVRI.Models.incident report;
+                //@Html.ValidationSummary(true, "", new { @class = "text-danger" })
                 <div class="form-group">
                     @Html.LabelFor(m => m.CNICNo, new { @class = "col-md-4 control-label" })
                     <div class="col-md-6">
@@ -204,7 +254,7 @@
                 <div class="form-group">
                     @Html.LabelFor(m => m.DLicense, new { @class = "col-md-4 control-label" })
                     <div class="col-md-6">
-                        @Html.PasswordFor(m => m.DLicense, new { @class = "form-control" })
+                        @Html.TextBoxFor(m => m.DLicense, new { @class = "form-control" })
                         @Html.ValidationMessageFor(m => m.DLicense, "", new { @class = "text-danger" })
                     </div>
                 </div>

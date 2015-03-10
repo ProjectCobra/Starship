@@ -48,7 +48,43 @@ namespace CALVRI.Models
             return collection.FindAll();
         }
 
-        public T Getprofile(ulong cnic, string col)
+        public T Getprofile(ObjectId id, string col)
+        {
+            Console.WriteLine("Connecting....");
+            var connectionString = "mongodb://root:OqkVBsTKj6TK@54.149.225.22:27017";
+
+            var client = new MongoClient(connectionString);
+            var server = client.GetServer();
+            Console.WriteLine("GetServer");
+            MongoDatabase database = server.GetDatabase("calvridb");
+            Console.WriteLine("GetDB");
+            MongoCollection<T> collection = database.GetCollection<T>(col);
+            Console.WriteLine("GetCollection");
+
+            var query = Query<cnic>.EQ(e => e.id, id);
+            var entity = collection.FindOne(query);
+            return entity;
+        }
+
+        public T Get_v_profile(ulong cnic, ulong dl , string col)
+        {
+            Console.WriteLine("Connecting....");
+            var connectionString = "mongodb://root:OqkVBsTKj6TK@54.149.225.22:27017";
+
+            var client = new MongoClient(connectionString);
+            var server = client.GetServer();
+            Console.WriteLine("GetServer");
+            MongoDatabase database = server.GetDatabase("calvridb");
+            Console.WriteLine("GetDB");
+            MongoCollection<T> collection = database.GetCollection<T>(col);
+            Console.WriteLine("GetCollection");
+
+            var query = Query.And(Query<cnic>.EQ(e => e.CNICNo, cnic), Query<cnic>.EQ(e => e.DLicense, dl));
+            var entity = collection.FindOne(query);
+            return entity;
+        }
+
+        public T Get_tw_profile(ulong cnic, string col)
         {
             Console.WriteLine("Connecting....");
             var connectionString = "mongodb://root:OqkVBsTKj6TK@54.149.225.22:27017";
