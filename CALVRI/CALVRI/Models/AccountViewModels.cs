@@ -55,19 +55,65 @@ namespace CALVRI.Models
     {
         [Required]
         //[EmailAddress]
-        [Display(Name = "Username")]
-        public string Username { get; set; }
+        [Display(Name = "Name")]
+        public string Name { get; set; }
 
         [Required]
-        [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
-        [DataType(DataType.Password)]
-        [Display(Name = "Password")]
-        public string Password { get; set; }
+        //[StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
+        [DataType(DataType.DateTime)]
+        [Display(Name = "Date of Birth")]
+        public string DOB { get; set; }
 
+        [Required]
+        //[EmailAddress]
+        [Display(Name = "Place of Birth")]
+        public string PoB { get; set; }
+
+        [Required]
+        [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 13)]
         [DataType(DataType.Password)]
-        [Display(Name = "Confirm password")]
-        [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
-        public string ConfirmPassword { get; set; }
+        [Display(Name = "CNIC No")]
+        public string CnicNo { get; set; }
+
+        [Required]
+        //[EmailAddress]
+        [Display(Name = "Mother Name")]
+        public string Mname { get; set; }
+
+        [Required]
+        [Display(Name = "Email ID")]
+        public string EmailId { get; set; }
+
+        [Required]
+        [Display(Name = "About Yourself")]
+        public string Details { get; set; }
+
+        //public class CustomPasswordValidator : IIdentityValidator<string>
+        //{
+        //    public int MinimumLength { get; private set; }
+        //    public int MaximumLength { get; private set; }
+        //    public CustomPasswordValidator(int minimumLength, int maximumLength)
+        //    {
+        //        this.MinimumLength = minimumLength;
+        //        this.MaximumLength = MaximumLength;
+        //    }
+        //    public Task<IdentityResult> ValidateAsync(string item)
+        //    {
+        //        if (!string.IsNullOrWhiteSpace(item) && item.Trim().Length >= MinimumLength &&
+        //            item.Trim().Length <= MaximumLength)
+        //            return Task.FromResult(IdentityResult.Success);
+        //        else return Task.FromResult(IdentityResult.Failed("Password did not meet requrements."));
+        //    }
+        //}
+
+        //[DataType(DataType.Password)]
+        //[Display(Name = "Confirm password")]
+        //[Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
+        //public string ConfirmPassword { get; set; }
+
+        [Display(Name = "Remember me?")]
+        public bool RememberMe { get; set; }
+
     }
 
     public class ResetPasswordViewModel
@@ -97,5 +143,14 @@ namespace CALVRI.Models
         //[EmailAddress]
         [Display(Name = "Username")]
         public string Username { get; set; }
+
+        //new properties
+        [Required]
+        [Display(Name = "Email ID")]
+        public string EmailId { get; set; }
+
+        [Required]
+        [Display(Name = "About Yourself")]
+        public string Details { get; set; }
     }
 }

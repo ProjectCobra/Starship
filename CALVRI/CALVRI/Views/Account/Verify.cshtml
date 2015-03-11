@@ -1,0 +1,67 @@
+﻿@using CALVRI.Models
+@model RegisterViewModel
+@{
+    ViewBag.Title = "Verify";
+}
+@ViewBag.Password
+
+<h2>Verify</h2>
+
+<div class="col-lg-6">
+    @using (Html.BeginForm("ConfirmEmail", "AccountController", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+    {
+        @Html.AntiForgeryToken()
+        <h4></h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(m => m.Name, new { @class = "col-md-3 control-label" })
+            <div class="col-md-6">
+                @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.Name, "", new { @class = "text-danger" })
+            </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.DOB, new { @class = "col-md-3 control-label" })
+            <div class="col-md-6">
+                @Html.TextBoxFor(m => m.DOB, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.DOB, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.PoB, new { @class = "col-md-3 control-label" })
+            <div class="col-md-6">
+                @Html.TextBoxFor(m => m.PoB, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.PoB, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.CnicNo, new { @class = "col-md-3 control-label" })
+            <div class="col-md-6">
+                @Html.PasswordFor(m => m.CnicNo, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.CnicNo, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.Mname, new { @class = "col-md-3 control-label" })
+            <div class="col-md-6">
+                @Html.TextBoxFor(m => m.Mname, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.Mname, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-8">
+                <div class="checkbox">
+                    @Html.CheckBoxFor(m => m.RememberMe)
+                    @Html.LabelFor(m => m.RememberMe)
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-8">
+                <input type="submit" value="Log in" class="btn btn-default" />
+            </div>
+        </div>
+    }
+</div>
+

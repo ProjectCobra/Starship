@@ -53,6 +53,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="Magellanic.Interfaces.WebSecurity">
+      <HintPath>..\packages\Magellanic.Interfaces.WebSecurity.0.4.5476.28613\lib\net40\Magellanic.Interfaces.WebSecurity.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="MongoDB.Bson, Version=1.10.0.62, Culture=neutral, PublicKeyToken=f686731cfb9cc103, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -61,6 +64,9 @@
     <Reference Include="MongoDB.Driver, Version=1.10.0.62, Culture=neutral, PublicKeyToken=f686731cfb9cc103, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\mongocsharpdriver.1.10.0\lib\net35\MongoDB.Driver.dll</HintPath>
+    </Reference>
+    <Reference Include="OmidID.Web.Security.EFMembershipProvider">
+      <HintPath>..\packages\EFMembership-WebMatrix.3.1\lib\net45\OmidID.Web.Security.EFMembershipProvider.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -123,6 +129,14 @@
       <Private>True</Private>
       <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
     </Reference>
+    <Reference Include="WebMatrix.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.Data.2.0.20710.0\lib\net40\WebMatrix.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="WebMatrix.WebData, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.WebData.2.0.20710.0\lib\net40\WebMatrix.WebData.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Newtonsoft.Json">
@@ -179,6 +193,8 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\TWardenController.cs" />
     <Compile Include="DAL\Dal.cs" />
+    <Compile Include="EFMembership\MyMembership.cs" />
+    <Compile Include="EFMembership\MyRole.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -311,6 +327,7 @@
     <Content Include="img\Thumbs.db" />
     <Content Include="less\theme.less" />
     <Content Include="less\variables.less" />
+    <Content Include="EFMembership\Web_sample1.config" />
     <None Include="obj\Debug\__TestProfilesForFilePreview__\calvri.pubxml" />
     <None Include="Properties\PublishProfiles\calvri.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
@@ -364,6 +381,7 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\CNIC\Index.cshtml" />
     <Content Include="Views\TWarden\Index.cshtml" />
+    <Content Include="Views\Account\Verify.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

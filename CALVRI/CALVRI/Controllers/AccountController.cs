@@ -9,8 +9,11 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
+using System.Web.Security;
 using Owin;
 using CALVRI.Models;
+using WebMatrix.WebData;
+
 
 namespace CALVRI.Controllers
 {
@@ -39,6 +42,53 @@ namespace CALVRI.Controllers
             }
         }
 
+        // GET: /Account/Verification
+        [AllowAnonymous]
+        public ActionResult Verify(string returnUrl)
+        {
+            ViewBag.ReturnUrl = returnUrl;
+            return View();
+        }
+
+        // POST: /Account/Verify
+        [HttpPost]
+        [AllowAnonymous]
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> Verify(RegisterViewModel model, string returnUrl)
+        {
+            if (ModelState.IsValid)
+            {
+                var user = new ApplicationUser { UserName = model.Name };
+                var result = await UserManager.CreateAsync(user, model.CnicNo);
+                if (result.Succeeded)
+                {
+                    var code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
+                    var callbackUrl = Url.Action("ConfirmEmail", "Account", 
+                        new { userId = user.Id, code = code }, 
+                        protocol: Request.Url.Scheme);
+
+                    await UserManager.SendEmailAsync(user.Id, 
+                        "Account needs confirmation", 
+                        "Please wait while we verify your account.");
+                    ViewBag.Link = callbackUrl;
+                    return View("DisplayEmail");
+                }
+                Random rand = new Random();
+                var temp=0;
+                for (int i = 0; i < 10; i++)
+                {
+                    temp = rand.Next(0,10);
+                }
+                ViewBag.Password = temp;
+                
+
+                AddErrors(result);
+            }
+
+            // If we got this far, something failed, redisplay form
+            return View(model);
+        }
+
         //
         // GET: /Account/Login
         [AllowAnonymous]
@@ -48,7 +98,6 @@ namespace CALVRI.Controllers
             return View();
         }
 
-        //
         // POST: /Account/Login
         [HttpPost]
         [AllowAnonymous]
@@ -90,17 +139,25 @@ namespace CALVRI.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser() { UserName = model.Username, Email = model.Username };
-                IdentityResult result = await UserManager.CreateAsync(user, model.Password);
+
+                try
+                {
+                    WebSecurity.CreateUserAndAccount(model.Name, model.CnicNo, new { EmailId = model.EmailId, Details = model.Details });
+
+                    WebSecurity.Login(model.Name, model.CnicNo);
+                    return RedirectToAction("Index", "Home");
+                }
+                catch (MembershipCreateUserException e)
+                {
+                  //  ModelState.AddModelError("", ErrorCodeToString(e.StatusCode));
+                    ModelState.AddModelError(string.Empty, "Error! Enter your complete information");
+                }
+
+                var user = new ApplicationUser() { UserName = model.Name, Email = model.Name};
+                IdentityResult result = await UserManager.CreateAsync(user, model.CnicNo);
                 if (result.Succeeded)
                 {
                     await SignInAsync(user, isPersistent: false);
-
-                    // For more information on how to enable account confirmation and password reset please visit http://go.microsoft.com/fwlink/?LinkID=320771
-                    // Send an email with this link
-                    // string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
-                    // var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
-                    // await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
 
                     return RedirectToAction("Index", "Home");
                 }
@@ -127,6 +184,7 @@ namespace CALVRI.Controllers
             IdentityResult result = await UserManager.ConfirmEmailAsync(userId, code);
             if (result.Succeeded)
             {
+                
                 return View("ConfirmEmail");
             }
             else
@@ -159,16 +217,32 @@ namespace CALVRI.Controllers
                     ModelState.AddModelError("", "The user either does not exist or is not confirmed.");
                     return View();
                 }
-
-                // For more information on how to enable account confirmation and password reset please visit http://go.microsoft.com/fwlink/?LinkID=320771
-                // Send an email with this link
-                // string code = await UserManager.GeneratePasswordResetTokenAsync(user.Id);
-                // var callbackUrl = Url.Action("ResetPassword", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);		
-                // await UserManager.SendEmailAsync(user.Id, "Reset Password", "Please reset your password by clicking <a href=\"" + callbackUrl + "\">here</a>");
-                // return RedirectToAction("ForgotPasswordConfirmation", "Account");
             }
 
             // If we got this far, something failed, redisplay form
+            return View(model);
+        }
+
+        [HttpPost]
+        [AllowAnonymous]
+        [ValidateAntiForgeryToken]
+        public ActionResult ResetPass(LoginViewModel model, string returnUrl)
+        {
+            if (WebSecurity.UserExists(model.Username))
+            {
+                string ptoken = WebSecurity.GeneratePasswordResetToken(model.Username, 190);
+                //change to be as secure as you choose
+                string tmpPass = Membership.GeneratePassword(10, 4);
+                WebSecurity.ResetPassword(ptoken, tmpPass);
+                //add your own email logic here
+                ViewData["msg"] = "Your new password is: " + tmpPass;
+                return View(model);
+            }
+            else
+            {
+                ModelState.AddModelError("", "The user name wasn't found.");
+            }
+
             return View(model);
         }
 

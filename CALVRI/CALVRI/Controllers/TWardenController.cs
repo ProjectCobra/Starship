@@ -39,6 +39,12 @@ namespace CALVRI.Controllers
             return View();
         }
 
+        // POST: Report
+        public ActionResult ReportIncident()
+        {
+            return View();
+        }
+
         // GET: Search
         public ActionResult Search()
         {
