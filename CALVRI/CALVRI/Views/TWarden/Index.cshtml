@@ -1,6 +1,6 @@
 ﻿@using CALVRI.Models
-@model CNIC
 
+@model cnic
 @{
     ViewBag.Title = "IndexW";
 }
@@ -16,10 +16,9 @@
                 <div class="row bg-primary white">
                     <div class="col-md-6 no-pad">
                         <div class="user-pad">
-                            <h3>Traffic Warden Name</h3>
-                            <h4 class="white"><i class="glyphicon glyphicon-user"></i> Username</h4>
-                            <h4 class="white"><i class="glyphicon glyphicon-credit-card"></i> CNIC Number</h4>
-                            <h4 class="white"><i class="glyphicon glyphicon-picture"></i> Place of Duty</h4>
+                            <h3 class="white"><i class="glyphicon glyphicon-user"></i> @ViewBag.profile.Name</h3>
+                            <h4 class="white"><i class="glyphicon glyphicon-credit-card"></i> CNICNo: @ViewBag.profile.CNICNo</h4>
+                            <h4 class="white"><i class="glyphicon glyphicon-picture"></i> Place of Duty:<br> @ViewBag.profile.DutyPlace</h4>
                         </div>
                     </div>
                     <div class="col-md-6 no-pad">
@@ -37,7 +36,7 @@
                     </div>
                     <div class="col-md-4 user-pad text-center">
                         <button class="btn btn-labeled btn-info">
-                            <span class="btn-label"><i class="glyphicon glyphicon-certificate"></i></span>6 Challans Issued
+                            <span class="btn-label"><i class="glyphicon glyphicon-certificate"></i></span> Challans Issued
                         </button>
                     </div>
                     <div class="col-md-4 user-pad text-center">
@@ -94,7 +93,7 @@
     </div>
 </section>
 
-<div class="modal fade" id="report" tabindex="-1" role="dialog" aria-labelledby="report" aria-hidden="true">
+@*<div class="modal fade" id="report" tabindex="-1" role="dialog" aria-labelledby="report" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -137,8 +136,87 @@
         <!-- /.modal-content -->
     </div>
     <!-- /.modal-dialog -->
+</div>*@
+
+<div class="modal fade" id="report" tabindex="-1" role="dialog" aria-labelledby="report" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4 class="modal-title custom_align" id="Heading">Report Incident</h4>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <input class="form-control " type="text" placeholder="Incident">
+                </div>
+                <div class="form-group">
+                    <textarea rows="2" class="form-control" placeholder="Landmark"></textarea>
+                </div>
+                <div class="form-group">
+                    <textarea rows="2" class="form-control" placeholder="Time of Incident"></textarea>
+                </div>
+                <div class="form-group">
+                    <textarea rows="2" class="form-control" placeholder="Additional Information"></textarea>
+                </div>
+            </div>
+            <div class="modal-footer ">
+                <button type="button" class="btn btn-warning btn-lg" style="width: 100%;"><span class="glyphicon glyphicon-ok-sign"></span>Report</button>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
 </div>
 
+@*<section id="about" class="home-section text-center" style="display:none">
+    <div class="heading-about">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <div class="wow bounceInDown" data-wow-delay="0.4s">
+                        <div class="section-heading">
+                            <h2>REPORT INCIDENT</h2>
+                            <i class="fa fa-2x fa-angle-down"></i>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container" id="loginForm">
+        <div class="row">
+            <div class="col-lg-2 col-lg-offset-5">
+                <hr class="marginbot-50">
+            </div>
+        </div>
+        <div class="row">
+            @using (Html.BeginForm("ReportIncident", "TWarden", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+            {
+                //@Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="form-group">
+                    @Html.LabelFor(p => p.DateofIncident, new { @class = "col-md-4 control-label" })
+                    <div class="col-md-6">
+                        @Html.TextBoxFor(m => m.CNICNo, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.CNICNo, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(m => m.DLicense, new { @class = "col-md-4 control-label" })
+                    <div class="col-md-6">
+                        @Html.TextBoxFor(m => m.DLicense, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.DLicense, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-8">
+                        <input type="submit" value="Search" class="btn btn-default" />
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</section>*@
 <section id="about" class="home-section text-center" style="display:none">
     <div class="heading-about">
         <div class="container">
@@ -164,19 +242,19 @@
         <div class="row">
             @using (Html.BeginForm("Search", "TWarden", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
             {
-                @Html.AntiForgeryToken()
-                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                CALVRI.Models.incident report;
+                //@Html.ValidationSummary(true, "", new { @class = "text-danger" })
                 <div class="form-group">
-                    @Html.LabelFor(m => m.CNICNo, new { @class = "col-md-3 control-label" })
+                    @Html.LabelFor(m => m.CNICNo, new { @class = "col-md-4 control-label" })
                     <div class="col-md-6">
                         @Html.TextBoxFor(m => m.CNICNo, new { @class = "form-control" })
                         @Html.ValidationMessageFor(m => m.CNICNo, "", new { @class = "text-danger" })
                     </div>
                 </div>
                 <div class="form-group">
-                    @Html.LabelFor(m => m.DLicense, new { @class = "col-md-3 control-label" })
+                    @Html.LabelFor(m => m.DLicense, new { @class = "col-md-4 control-label" })
                     <div class="col-md-6">
-                        @Html.PasswordFor(m => m.DLicense, new { @class = "form-control" })
+                        @Html.TextBoxFor(m => m.DLicense, new { @class = "form-control" })
                         @Html.ValidationMessageFor(m => m.DLicense, "", new { @class = "text-danger" })
                     </div>
                 </div>

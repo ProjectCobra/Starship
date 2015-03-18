@@ -2,67 +2,30 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using System.ComponentModel.DataAnnotations;
+using MongoDB.Bson;
+using MongoDB.Driver;
+using MongoDB.Driver.Builders;
 using MongoDB.Bson.Serialization.Attributes;
 using MongoDB.Bson.Serialization.IdGenerators;
-using MongoDB.Bson;
 
 namespace CALVRI.Models
 {
-    public class CNIC
+    public class cnic
     {
-        [BsonId(IdGenerator = typeof(CombGuidGenerator))]
-        public Guid Id { get; set; }
-
-        [Required]
-        [BsonElement("CNICNumber")]
-        [Display(Name = "CNICNumber")]
-        public int CNICNo { get; set; }
-
-        [Required]
-        [BsonElement("Name")]
-        [Display(Name = "Name")]
+        [BsonId]
+        public ObjectId id { get; set; }
+        public string Password { get; set; }
         public string Name { get; set; }
-
-        [Required]
-        [BsonElement("DoB")]
-        [Display(Name = "Date of Birth")]
+        public ulong CNICNo { get; set; }
+        public ulong DLicense { get; set; }
         public DateTime DOB { get; set; }
-
-        [Required]
-        [BsonElement("PlaceofBirth")]
-        [Display(Name = "Place of Birth")]
-        public string Birthplace { get; set; }
-
-        [Required]
-        [BsonElement("DrivingLicenseNumber")]
-        [Display(Name = "Driving License Number")]
-        public int DLicense { get; set; }
-
-        [Required]
-        [BsonElement("LicenseExpiry")]
-        [Display(Name = "License expiry")]
+        public String Birthplace { get; set; }
         public DateTime EDLicense { get; set; }
-
-        [Required]
-        [BsonElement("VehicleRegistration")]
-        [Display(Name = "Vehicle Registration")]
-        public string VReg { get; set; }
-
-        [Required]
-        [BsonElement("VehicleMake")]
-        [Display(Name = "Vehicle Make")]
-        public string Vmake { get; set; }
-
-        [Required]
-        [BsonElement("VehicleColor")]
-        [Display(Name = "Vehicle Color")]
-        public string Vcolor { get; set; }
-
-        [Required]
-        [BsonElement("RoadTaxPaidUpto")]
-        [Display(Name = "Road Tax paid upto" )]
-        public DateTime RTDate { get; set; }
-
+        public DateTime IssueDate { get; set; }
+        public DateTime RenewalDate { get; set; }
+        public string VehicleAuth { get; set; }
+        public int TotalChallans { get; set; }
+        public List<vehicle> Vehicle { get; set; }
+        public List<challan> Challan { get; set; }
     }
 }

@@ -1,40 +1,60 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using CALVRI.Models;
-using CALVRI.DAL;
+
+using MongoDB.Bson;
+using MongoDB.Driver;
+using MongoDB.Driver.Builders;
 
 namespace CALVRI.Controllers
 {
-    public class CNICController : Controller, IDisposable
+    public class CNICController : Controller
     {
-        private Dal dal = new Dal();
-        private bool disposed = false;
+        // GET: /CNIC/
+        public ActionResult Index()
+        {
+            ulong CNICNo = 3660308805460;
+            string col = "cnic";
+            MongoHelper<cnic> model = new MongoHelper<cnic>();
+            ViewBag.collection = model.Getdb(col);
+            ViewBag.profiles = model.Getallprofiles(col);
+            ViewBag.profile = model.Get_tw_profile(CNICNo, col);
+            return View();
+        }
 
-        //// GET: CNIC Profile
-        //public ActionResult Index()
-        //{
-        //    return View();
-        //}
-
+        // GET: /CNIC/CNICNo
+        //[HttpGet]
+        [Route("{controller}/{action}/id:String")]
+        public ActionResult IndexById(String id)
+        {
+            //ulong CNICNo = 3660308805460;
+            var v_id = ObjectId.Parse(id);
+            string col = "cnic";
+            MongoHelper<cnic> model = new MongoHelper<cnic>();
+            //ViewBag.collection = model.Getdb(col);
+            //ViewBag.profiles = model.Getallprofiles(col);
+            //var V_profile = model.Get_tw_profile(CNICNo, col);
+            //ViewBag.v_profile = V_profile;
+            ViewBag.profile = model.Getprofile(v_id, col);
+            return View();
+        }
         //POST: Paychallan
-        [HttpPost]
         public ActionResult Paychallan()
         {
             return View();
         }
 
         //POST: Pay Road Tax
-        [HttpPost]
         public ActionResult PayRT()
         {
             return View();
         }
 
         //POST: Paychallan
-        [HttpPost]
         public ActionResult LicenseRenew()
         {
             return View();
@@ -59,13 +79,6 @@ namespace CALVRI.Controllers
         }
 
 
-        // GET: /CNIC/
-
-        public ActionResult Index()
-        {
-            return View(dal.GetProfile());
-        }
-
         //
         // GET: /CNIC/Create
 
@@ -73,45 +86,5 @@ namespace CALVRI.Controllers
         {
             return View();
         }
-
-        //
-        // POST: /CNIC/Create
-
-        [HttpPost]
-        public ActionResult Create(CNIC CNIC_profile)
-        {
-            try
-            {
-                dal.CreateTask(CNIC_profile);
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        # region IDisposable
-
-        new protected void Dispose()
-        {
-            this.Dispose(true);
-            GC.SuppressFinalize(this);
-        }
-
-        new protected virtual void Dispose(bool disposing)
-        {
-            if (!this.disposed)
-            {
-                if (disposing)
-                {
-                    this.dal.Dispose();
-                }
-            }
-
-            this.disposed = true;
-        }
-
-        # endregion
     }
 }

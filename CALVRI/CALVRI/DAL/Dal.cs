@@ -16,7 +16,7 @@ namespace CALVRI.DAL
         // To do: update the connection string with the DNS name
         // or IP address of your server. 
         //For example, "mongodb://testlinux.cloudapp.net"
-        private string connectionString = "mongodb://ubuntu:TR7464TOk5Oy@ec2-54-149-161-212.us-west-2.compute.amazonaws.com:27017";
+        private string connectionString = "mongodb://54.149.225.22:27017";
 
         // This sample uses a database named "Tasks" and a 
         //collection named "TasksList".  The database and collection 
@@ -31,23 +31,37 @@ namespace CALVRI.DAL
         }
 
         // Gets all Task items from the MongoDB server.        
-        public List<CNIC> GetProfile()
+        public List<cnic> GetProfile()
         {
             try
             {
-                MongoCollection<CNIC> collection = GetTasksCollection();
-                return collection.FindAll().ToList<CNIC>();
+                MongoCollection<cnic> collection = GetTasksCollection();
+                return collection.FindAll().ToList<cnic>();
             }
             catch (MongoConnectionException)
             {
-                return new List<CNIC>();
+                return new List<cnic>();
+            }
+        }
+
+        // Gets all Task items from the MongoDB server.        
+        public List<cnic> GetProfile(int CNICno, int DrivLic_no)
+        {
+            try
+            {
+                MongoCollection<cnic> collection = GetTasksCollection();
+                return collection.FindAll().ToList<cnic>();
+            }
+            catch (MongoConnectionException)
+            {
+                return new List<cnic>();
             }
         }
 
         // Creates a Task and inserts it into the collection in MongoDB.
-        public void CreateTask(CNIC CNIC_profile)
+        public void CreateTask(cnic CNIC_profile)
         {
-            MongoCollection<CNIC> collection = GetTasksCollectionForEdit();
+            MongoCollection<cnic> collection = GetTasksCollectionForEdit();
             try
             {
                 collection.Insert(CNIC_profile, SafeMode.True);
@@ -58,19 +72,27 @@ namespace CALVRI.DAL
             }
         }
 
-        private MongoCollection<CNIC> GetTasksCollection()
+        private MongoCollection<cnic> GetTasksCollection()
         {
             MongoServer server = MongoServer.Create(connectionString);
             MongoDatabase database = server[dbName];
-            MongoCollection<CNIC> todoTaskCollection = database.GetCollection<CNIC>(collection_CNIC);
+            MongoCollection<cnic> todoTaskCollection = database.GetCollection<cnic>(collection_CNIC);
             return todoTaskCollection;
         }
 
-        private MongoCollection<CNIC> GetTasksCollectionForEdit()
+        private MongoCollection<cnic> GetProfileData(int CNICno, int DrivLic_no)
         {
             MongoServer server = MongoServer.Create(connectionString);
             MongoDatabase database = server[dbName];
-            MongoCollection<CNIC> todoTaskCollection = database.GetCollection<CNIC>(collection_CNIC);
+            MongoCollection<cnic> CNICProfile = database.GetCollection<cnic>(collection_CNIC);
+            return CNICProfile;
+        }
+
+        private MongoCollection<cnic> GetTasksCollectionForEdit()
+        {
+            MongoServer server = MongoServer.Create(connectionString);
+            MongoDatabase database = server[dbName];
+            MongoCollection<cnic> todoTaskCollection = database.GetCollection<cnic>(collection_CNIC);
             return todoTaskCollection;
         }
 
